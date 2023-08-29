@@ -11,9 +11,7 @@ const nextConfig = {
           root: 'assets',
           output: 'public',
           metadata: 'src/shared/ui/icon/sprite.gen.ts',
-          resetColors: {
-            replaceUnknown: 'currentColor',
-          },
+          resetColors: false,
         }),
       );
     }
