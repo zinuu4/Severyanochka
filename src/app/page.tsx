@@ -1,3 +1,7 @@
 export default function Home() {
-  return <main>kmdks</main>;
+  return (
+    <main>
+      <div />
+    </main>
+  );
 }

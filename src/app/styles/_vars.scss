@@ -1,0 +1,26 @@
+:root {
+  // base
+  --content-width: 1230px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --font-family: 'Rubik', sans-serif;
+
+  // animations
+  --duration: 0.3s;
+
+  // colors
+  --main-bg-page: #FBF8EC;
+  --main-secondary: #70C05B;
+  --main-primary: #F63;
+  --main-surface: #FFF;
+  --main-on-surface: #414141;
+  --main-on-secondary: #FFF;
+  --grayscale-hardest: #606060;
+  --grayscale-lightest: #F3F2F1;
+
+  // font-size
+  --font-size: 16px;
+
+  // borders
+  --rounded-sm: 4px;
+}

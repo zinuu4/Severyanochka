@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Header } from '@/widgets/header';
 
-import './globals.css';
+import './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 

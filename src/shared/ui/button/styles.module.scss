@@ -1,0 +1,20 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: var(--rounded-sm);
+  background: var(--grayscale-lightest);
+  color: var(--grayscale-hardest);
+
+  &.active {
+    background: var(--main-secondary);
+    color: var(--main-on-secondary);
+  }
+
+  &.orange {
+    background: var(--main-primary) !important;
+    color: var(--main-on-secondary) !important;
+  }
+}
