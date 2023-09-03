@@ -6,6 +6,7 @@ import { Icon } from '..';
 import styles from './styles.module.scss';
 
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  chevron?: boolean;
   size: 'large' | 'medium' | 'small';
   orange?: boolean;
   green?: boolean;
@@ -19,6 +20,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = ({
+  chevron,
   size = 'medium',
   orange,
   green,
@@ -41,8 +43,14 @@ export const Button = ({
     })}
     {...props}
   >
-    {leftArrow && <Icon name="chevron" />}
-    {children}
-    {rightArrow && <Icon name="chevron" className={styles.chevronRight} />}
+    {chevron ? (
+      <Icon name="chevron" className={styles.chevronRight} />
+    ) : (
+      <>
+        {leftArrow && <Icon name="chevron" />}
+        {children}
+        {rightArrow && <Icon name="chevron" className={styles.chevronRight} />}
+      </>
+    )}
   </button>
 );
