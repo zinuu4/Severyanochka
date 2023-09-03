@@ -1,32 +1,48 @@
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 
+import { Icon } from '..';
+
 import styles from './styles.module.scss';
 
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  isActive?: boolean;
-  isOrange?: boolean;
+  size: 'large' | 'medium' | 'small';
+  orange?: boolean;
+  green?: boolean;
+  light?: boolean;
+  error?: boolean;
+  muted?: boolean;
+  leftArrow: boolean;
+  rightArrow: boolean;
   className?: string;
   children?: ReactNode;
 }
 
 export const Button = ({
-  isActive,
-  isOrange,
+  size = 'medium',
+  orange,
+  green,
+  light,
+  error,
+  muted,
+  leftArrow,
+  rightArrow,
   className,
   children,
   ...props
 }: IButtonProps) => (
   <button
-    className={clsx(
-      styles.btn,
-      isActive && styles.active,
-      isOrange && styles.orange,
-      className,
-      'btn-reset',
-    )}
+    className={clsx(styles.btn, className, 'btn-reset', styles[size], {
+      [styles.orange]: orange,
+      [styles.green]: green,
+      [styles.light]: light,
+      [styles.error]: error,
+      [styles.muted]: muted,
+    })}
     {...props}
   >
+    {leftArrow && <Icon name="chevron" />}
     {children}
+    {rightArrow && <Icon name="chevron" className={styles.chevronRight} />}
   </button>
 );
