@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 interface IToggleBtnProps {
-  size: 'large' | 'medium';
+  size?: 'large' | 'medium';
   disabled?: boolean;
 }
 
@@ -13,7 +13,7 @@ interface IToggleBtnProps {
 export const ToggleBtn = ({ disabled, size = 'large' }: IToggleBtnProps) => (
   <button disabled={disabled} className="btn-reset">
     <label className={clsx(styles.switch, styles[size])}>
-      <input type="checkbox" />
+      <input disabled={disabled} type="checkbox" />
       <span
         className={clsx(styles.slider, styles.round, styles[size], {
           [styles.disabled]: disabled,
