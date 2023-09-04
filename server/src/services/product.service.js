@@ -26,9 +26,19 @@ const updateProduct = async (productId, updateBody) => {
   return product;
 };
 
+const deleteProduct = async (productId) => {
+  const product = await getProductById(productId);
+  if (!product) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Product not found');
+  }
+  await product.remove();
+  return product;
+};
+
 module.exports = {
   createProduct,
   getAllProducts,
   getProductById,
   updateProduct,
+  deleteProduct,
 };
