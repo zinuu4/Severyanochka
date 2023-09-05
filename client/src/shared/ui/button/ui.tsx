@@ -1,11 +1,12 @@
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 
+import { ReactTagProps } from '@/shared/types';
 import { Icon } from '..';
 
 import styles from './styles.module.scss';
 
-interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface IButtonProps extends ReactTagProps<'button'> {
   chevron?: boolean;
   size: 'large' | 'medium' | 'small';
   orange?: boolean;
