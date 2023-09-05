@@ -1,9 +1,11 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import { ReactTagProps } from '@/shared/types';
+
 import styles from './styles.module.scss';
 
-interface ToggleButtonProps {
+interface ToggleButtonProps extends ReactTagProps<'button'> {
   size?: 'large' | 'medium';
   disabled?: boolean;
 }
@@ -11,10 +13,11 @@ interface ToggleButtonProps {
 // TODO: implement sizes
 
 export const ToggleButton: React.FC<ToggleButtonProps> = ({
-  disabled,
   size = 'large',
+  disabled,
+  ...props
 }) => (
-  <button disabled={disabled} className="btn-reset">
+  <button disabled={disabled} className="btn-reset" {...props}>
     <label className={clsx(styles.switch, styles[size])}>
       <input disabled={disabled} type="checkbox" />
       <span
