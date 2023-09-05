@@ -92,7 +92,7 @@ const productSchema = mongoose.Schema(
       required: true,
     },
     price: {
-      type: mongoose.SchemaTypes.Decimal128,
+      type: Number,
       required: true,
     },
     discounted: {
@@ -102,7 +102,7 @@ const productSchema = mongoose.Schema(
       type: Number,
     },
     discountedPrice: {
-      type: mongoose.SchemaTypes.Decimal128,
+      type: Number,
     },
     bonusAmount: {
       type: Number,
