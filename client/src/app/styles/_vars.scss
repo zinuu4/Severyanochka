@@ -9,7 +9,7 @@
   // animations
   --duration: 0.3s;
 
-  // main color
+  // main colors
   --background: #F4F4F2;
   --surface: #FFF;
   --primary: #F63;
@@ -18,6 +18,9 @@
   --on-surface: #414141;
   --on-primary: #FFF;
   --on-secondary: #FFF;
+
+  // minor colors
+  --background-light-mode-blue-light-100: #F4F6FB;
 
   // grayscale
   --grayscale-lightest: #F3F2F1;
@@ -30,6 +33,7 @@
   --pallete-info: #1CB9FC;
   --pallete-warning: #FCA21C;
   --pallete-error: #D80000;
+  --pallete-on-error: #F2F2F2;
 
   // disabled
   --primary-disabled: #FCD5BA;
@@ -54,7 +58,9 @@
 
   --font-weight: 400;
   --line-height: 150%;
+  --text-dark: #151515;
 
   // borders
   --rounded-sm: 4px;
+  --rounded-md: 5px;
 }

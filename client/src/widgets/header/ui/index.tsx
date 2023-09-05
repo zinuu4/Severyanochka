@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Checkbox, Logo, ToggleButton } from '@/shared/ui';
+import { Checkbox, Logo, ToggleButton, ToolTip } from '@/shared/ui';
 
 import { Catalog } from './catalog';
 
@@ -10,5 +10,6 @@ export const Header = () => (
     <Catalog />
     <ToggleButton />
     <Checkbox />
+    <ToolTip label="warning" theme="light" position="left" />
   </section>
 );

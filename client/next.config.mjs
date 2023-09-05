@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import svg from '@neodx/svg/webpack';
 
 /** @type {import('next').NextConfig} */
@@ -11,7 +10,9 @@ const nextConfig = {
           root: 'assets',
           output: 'public',
           metadata: 'src/shared/ui/icon/sprite.gen.ts',
-          resetColors: false,
+          resetColors: {
+            replaceUnknown: 'currentColor',
+          },
         }),
       );
     }

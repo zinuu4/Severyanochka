@@ -1,5 +1,6 @@
 export interface SpritesMap {
   sprite:
+    | 'alert-circle'
     | 'burger'
     | 'chevron'
     | 'warning-alert'
@@ -9,6 +10,7 @@ export interface SpritesMap {
 }
 export const SPRITES_META = {
   sprite: [
+    'alert-circle',
     'burger',
     'chevron',
     'warning-alert',
@@ -18,6 +20,7 @@ export const SPRITES_META = {
   ],
 } satisfies {
   sprite: Array<
+    | 'alert-circle'
     | 'burger'
     | 'chevron'
     | 'warning-alert'
