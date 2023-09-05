@@ -1,32 +1,60 @@
 import clsx from 'clsx';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, ElementType } from 'react';
+
+import { ReactTagProps } from '@/shared/types';
+import { Icon, IconName } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 
-interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  isActive?: boolean;
-  isOrange?: boolean;
+interface ButtonProps extends ReactTagProps<'button'> {
+  as?: ElementType;
+  href?: string;
+  onlyIcon?: IconName;
+  size: 'large' | 'medium' | 'small';
+  accent: 'primary' | 'secondary' | 'grayscale' | 'error';
+  leftIcon: IconName;
+  rightIcon: IconName;
   className?: string;
   children?: ReactNode;
 }
 
-export const Button = ({
-  isActive,
-  isOrange,
+const DEFAULT_ELEMENT: ElementType = 'button';
+
+export const Button: React.FC<ButtonProps> = ({
+  as,
+  href,
+  onlyIcon,
+  size = 'medium',
+  accent,
+  leftIcon,
+  rightIcon,
   className,
   children,
   ...props
-}: IButtonProps) => (
-  <button
-    className={clsx(
-      styles.btn,
-      isActive && styles.active,
-      isOrange && styles.orange,
-      className,
-      'btn-reset',
-    )}
-    {...props}
-  >
-    {children}
-  </button>
-);
+}) => {
+  const Element = as || DEFAULT_ELEMENT;
+
+  return (
+    <Element
+      className={clsx(
+        styles.btn,
+        className,
+        'btn-reset',
+        styles[size],
+        styles[accent],
+      )}
+      href={href}
+      {...props}
+    >
+      {onlyIcon ? (
+        <Icon name={onlyIcon} className={styles.chevronRight} />
+      ) : (
+        <>
+          {leftIcon && <Icon name={leftIcon} />}
+          {children}
+          {rightIcon && <Icon name={rightIcon} />}
+        </>
+      )}
+    </Element>
+  );
+};

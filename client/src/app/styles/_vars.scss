@@ -1,3 +1,4 @@
+/* stylelint-disable custom-property-empty-line-before */
 :root {
   // base
   --content-width: 1230px;
@@ -8,18 +9,51 @@
   // animations
   --duration: 0.3s;
 
-  // colors
-  --main-bg-page: #FBF8EC;
-  --main-secondary: #70C05B;
-  --main-primary: #F63;
-  --main-surface: #FFF;
-  --main-on-surface: #414141;
-  --main-on-secondary: #FFF;
-  --grayscale-hardest: #606060;
-  --grayscale-lightest: #F3F2F1;
+  // main color
+  --background: #F4F4F2;
+  --surface: #FFF;
+  --primary: #F63;
+  --secondary: #70C05B;
+  --on-background: #291E0F;
+  --on-surface: #414141;
+  --on-primary: #FFF;
+  --on-secondary: #FFF;
 
-  // font-size
-  --font-size: 16px;
+  // grayscale
+  --grayscale-lightest: #F3F2F1;
+  --grayscale-light: #BFBFBF;
+  --grayscale-hard: #8F8F8F;
+  --grayscale-hardest: #606060;
+
+  // pallete
+  --pallete-success: #008C49;
+  --pallete-info: #1CB9FC;
+  --pallete-warning: #FCA21C;
+  --pallete-error: #D80000;
+
+  // disabled
+  --primary-disabled: #FCD5BA;
+  --secondary-disabled: #E5FFDE;
+  --pallete-error-disabled: #FFC7C7;
+
+  // font
+  --font-xs-laptop: 12px;
+  --font-xs-header-laptop: 18px;
+
+  --font-s-laptop: 16px;
+  --font-s-header-laptop: 24px;
+  
+  --font-m-laptop: 18px;
+  --font-m-header-laptop: 36px;
+
+  --font-l-laptop: 24px;
+  --font-l-header-laptop: 48px;
+
+  --font-xl-laptop: 36px;
+  --font-xl-header-laptop: 64px;
+
+  --font-weight: 400;
+  --line-height: 150%;
 
   // borders
   --rounded-sm: 4px;
