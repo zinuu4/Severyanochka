@@ -13,10 +13,10 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-size: var(--font-size);
-  font-weight: 400;
-  line-height: 150%;
-  color: var(--main-on-surface);
-  background: var(--main-background);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  color: var(--on-surface);
+  background: var(--background);
   font-family: var(--font-family);
 }
 
@@ -28,7 +28,7 @@ body {
   max-width: var(--container-width);
 }
 
-.pageContainer {
+.page-container {
   flex: 1;
 }
 

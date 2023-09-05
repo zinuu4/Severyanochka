@@ -3,14 +3,17 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-interface IToggleBtnProps {
+interface ToggleButtonProps {
   size?: 'large' | 'medium';
   disabled?: boolean;
 }
 
 // TODO: implement sizes
 
-export const ToggleBtn = ({ disabled, size = 'large' }: IToggleBtnProps) => (
+export const ToggleButton: React.FC<ToggleButtonProps> = ({
+  disabled,
+  size = 'large',
+}) => (
   <button disabled={disabled} className="btn-reset">
     <label className={clsx(styles.switch, styles[size])}>
       <input disabled={disabled} type="checkbox" />

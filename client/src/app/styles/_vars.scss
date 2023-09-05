@@ -1,3 +1,4 @@
+/* stylelint-disable custom-property-empty-line-before */
 :root {
   // base
   --content-width: 1230px;
@@ -9,14 +10,14 @@
   --duration: 0.3s;
 
   // main color
-  --main-background: #F4F4F2;
-  --main-surface: #FFF;
-  --main-primary: #F63;
-  --main-secondary: #70C05B;
-  --main-on-background: #291E0F;
-  --main-on-surface: #414141;
-  --main-on-primary: #FFF;
-  --main-on-secondary: #FFF;
+  --background: #F4F4F2;
+  --surface: #FFF;
+  --primary: #F63;
+  --secondary: #70C05B;
+  --on-background: #291E0F;
+  --on-surface: #414141;
+  --on-primary: #FFF;
+  --on-secondary: #FFF;
 
   // grayscale
   --grayscale-lightest: #F3F2F1;
@@ -30,13 +31,26 @@
   --pallete-warning: #FCA21C;
   --pallete-error: #D80000;
 
-  // muted
-  --main-primary-muted: #FCD5BA;
-  --main-secondary-muted: #E5FFDE;
-  --pallete-error-muted: #FFC7C7;
+  // disabled
+  --primary-disabled: #FCD5BA;
+  --secondary-disabled: #E5FFDE;
+  --pallete-error-disabled: #FFC7C7;
 
-  // font-size
-  --font-size: 16px;
+  // font
+  --font-size-xs-laptop: 12px;
+  --font-size-xs-header-laptop: 18px;
+
+  --font-size-s-laptop: 16px;
+  --font-size-s-header-laptop: 24px;
+  
+  --font-size-m-laptop: 18px;
+  --font-size-m-header-laptop: 36px;
+
+  --font-size-l-laptop: 24px;
+  --font-size-l-header-laptop: 48px;
+
+  --font-size-xl-laptop: 36px;
+  --font-size-xl-header-laptop: 64px;
 
   // borders
   --rounded-sm: 4px;

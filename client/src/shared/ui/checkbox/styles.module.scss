@@ -3,8 +3,8 @@
 }
 
 .round label {
-  background-color: var(--main-surface);
-  border: 1px solid #ccc;
+  background-color: var(--surface);
+  border: 1px solid var(--grayscale-light);
   border-radius: 50%;
   cursor: pointer;
   height: 28px;
@@ -16,7 +16,7 @@
 }
 
 .round label::after {
-  border: 2px solid var(--main-surface);
+  border: 2px solid var(--surface);
   border-top: none;
   border-right: none;
   content: "";
@@ -34,8 +34,8 @@
 }
 
 .round input[type="checkbox"]:checked + label {
-  background-color: var(--main-secondary);
-  border-color: var(--main-secondary);
+  background-color: var(--secondary);
+  border-color: var(--secondary);
 }
 
 .round input[type="checkbox"]:checked + label::after {

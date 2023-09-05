@@ -1,57 +1,60 @@
 import clsx from 'clsx';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, ElementType } from 'react';
 
 import { ReactTagProps } from '@/shared/types';
-import { Icon } from '..';
+import { Icon, IconName } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 
-interface IButtonProps extends ReactTagProps<'button'> {
-  chevron?: boolean;
+interface ButtonProps extends ReactTagProps<'button'> {
+  as?: ElementType;
+  href?: string;
+  onlyIcon?: IconName;
   size: 'large' | 'medium' | 'small';
-  orange?: boolean;
-  green?: boolean;
-  light?: boolean;
-  error?: boolean;
-  muted?: boolean;
-  leftArrow: boolean;
-  rightArrow: boolean;
+  accent: 'primary' | 'secondary' | 'grayscale' | 'error';
+  leftIcon: IconName;
+  rightIcon: IconName;
   className?: string;
   children?: ReactNode;
 }
 
-export const Button = ({
-  chevron,
+const DEFAULT_ELEMENT: ElementType = 'button';
+
+export const Button: React.FC<ButtonProps> = ({
+  as,
+  href,
+  onlyIcon,
   size = 'medium',
-  orange,
-  green,
-  light,
-  error,
-  muted,
-  leftArrow,
-  rightArrow,
+  accent,
+  leftIcon,
+  rightIcon,
   className,
   children,
   ...props
-}: IButtonProps) => (
-  <button
-    className={clsx(styles.btn, className, 'btn-reset', styles[size], {
-      [styles.orange]: orange,
-      [styles.green]: green,
-      [styles.light]: light,
-      [styles.error]: error,
-      [styles.muted]: muted,
-    })}
-    {...props}
-  >
-    {chevron ? (
-      <Icon name="chevron" className={styles.chevronRight} />
-    ) : (
-      <>
-        {leftArrow && <Icon name="chevron" />}
-        {children}
-        {rightArrow && <Icon name="chevron" className={styles.chevronRight} />}
-      </>
-    )}
-  </button>
-);
+}) => {
+  const Element = as || DEFAULT_ELEMENT;
+
+  return (
+    <Element
+      className={clsx(
+        styles.btn,
+        className,
+        'btn-reset',
+        styles[size],
+        styles[accent],
+      )}
+      href={href}
+      {...props}
+    >
+      {onlyIcon ? (
+        <Icon name={onlyIcon} className={styles.chevronRight} />
+      ) : (
+        <>
+          {leftIcon && <Icon name={leftIcon} />}
+          {children}
+          {rightIcon && <Icon name={rightIcon} />}
+        </>
+      )}
+    </Element>
+  );
+};

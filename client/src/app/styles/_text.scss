@@ -1,73 +1,77 @@
+@import "./vars";
+
+// TODO: implement adaptability
+
 .text-xs {
-  font-size: 12px;
+  font-size: var(--font-size-xs-laptop);
 }
 
 .text-xs-bold {
-  font-size: 12px;
+  font-size: var(--font-size-xs-laptop);
   font-weight: 700;
 }
 
 .text-xs-header {
-  font-size: 18px;
+  font-size: var(--font-size-xs-header-laptop);
   font-weight: 700;
 }
 
 
 .text-s {
-  font-size: 16px;
+  font-size: var(--font-size-s-laptop);
 }
 
 .text-s-bold {
-  font-size: 16px;
+  font-size: var(--font-size-s-laptop);
   font-weight: 700;
 }
 
 .text-s-header {
-  font-size: 24px;
+  font-size: var(--font-size-s-header-laptop);
   font-weight: 700;
 }
 
 
 .text-m {
-  font-size: 18px;
+  font-size: var(--font-size-m-laptop);
 }
 
 .text-m-bold {
-  font-size: 18px;
+  font-size: var(--font-size-m-laptop);
   font-weight: 700;
 }
 
 .text-m-header {
-  font-size: 36px;
+  font-size: var(--font-size-m-header-laptop);
   font-weight: 700;
 }
 
 
 .text-l {
-  font-size: 24px;
+  font-size: var(--font-size-l-laptop);
 }
 
 .text-l-bold {
-  font-size: 24px;
+  font-size: var(--font-size-l-laptop);
   font-weight: 700;
 }
 
 .text-l-header {
-  font-size: 48px;
+  font-size: var(--font-size-l-header-laptop);
   font-weight: 700;
 }
 
 
 .text-xl {
-  font-size: 36px;
+  font-size: var(--font-size-xl-laptop);
 }
 
 .text-xl-bold {
-  font-size: 36px;
+  font-size: var(--font-size-xl-laptop);
   font-weight: 700;
 }
 
 .text-xl-header {
-  font-size: 64px;
+  font-size: var(--font-size-xl-header-laptop);
   font-weight: 700;
 }
