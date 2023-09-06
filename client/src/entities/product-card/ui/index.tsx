@@ -1,4 +1,5 @@
 /* eslint-disable import/order */
+import Link from 'next/link';
 import React from 'react';
 
 import { AddToCartButton } from './add-to-cart';
@@ -8,11 +9,11 @@ import { ProductTop } from './top';
 import styles from './styles.module.scss';
 
 export const ProductCard = () => (
-  <div className={styles.card}>
+  <Link href="/" className={styles.card}>
     <ProductTop />
     <div className={styles.content}>
       <ProductInfo />
       <AddToCartButton />
     </div>
-  </div>
+  </Link>
 );
