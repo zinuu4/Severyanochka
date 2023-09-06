@@ -11,6 +11,6 @@ export const ProductInfo = () => (
   <>
     <ProductPrices />
     <div className={clsx('text-s', styles.name)}>Чипсы Lays</div>
-    <Rating rating={4} />
+    <Rating size="small" rating={4} />
   </>
 );
