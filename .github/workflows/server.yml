@@ -1,0 +1,55 @@
+name: Server linting, testing, building
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - "server/**"
+  pull_request:
+    branches:
+      - main
+      - develop
+    paths:
+      - "server/**"
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.JS ${{matrix.node-version}}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{matrix.node-version}}
+
+      - name: Cache Yarn dependencies
+        uses: actions/cache@v2.1.6
+        with:
+            path: ./server/node_modules
+            key: ${{ runner.os }}-yarn-${{ hashFiles('./server/yarn.lock') }}
+            restore-keys: |
+              ${{ runner.os }}-yarn-
+
+      - name: install yarn
+        run: npm install --global yarn
+
+      - name: install modules
+        working-directory: ./server
+        run: yarn install --frozen-lockfile
+
+      #      - name: testing
+      #        run: yarn test
+
+      - name: linting ESLint
+        working-directory: ./server
+        run: yarn lint
+
+      - name: format Prettier
+        working-directory: ./server
+        run: yarn prettier
