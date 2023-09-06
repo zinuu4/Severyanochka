@@ -9,7 +9,7 @@
   background: var(--primary);
 
   &.disabled {
-    background: var(--primary-disabled);
+    background: var(--primary-muted);
     color: var(--primary);
   }
 }
@@ -18,7 +18,7 @@
   background: var(--secondary);
 
   &.disabled {
-    background: var(--secondary-disabled);
+    background: var(--secondary-muted);
     color: var(--secondary);
   }
 }
@@ -37,7 +37,7 @@
   background: var(--pallete-error);
 
   &.disabled {
-    background: var(--pallete-error-disabled);
+    background: var(--pallete-error-muted);
     color: var(--pallete-error);
   }
 }

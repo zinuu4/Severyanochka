@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 
+import { AddToFavoritesButton } from '@/features/add-to-favorites';
 import { Input, Logo, Rating } from '@/shared/ui';
 
 import { Catalog } from './catalog';
@@ -23,6 +24,7 @@ export const Header = () => {
         rightBtn="search"
       />
       <Rating rating={3} />
+      <AddToFavoritesButton />
     </section>
   );
 };
