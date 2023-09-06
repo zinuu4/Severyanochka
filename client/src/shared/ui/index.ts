@@ -4,3 +4,4 @@ export * from './button';
 export * from './toggle';
 export * from './checkbox';
 export * from './tooltip';
+export * from './input';

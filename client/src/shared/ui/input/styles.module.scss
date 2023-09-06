@@ -1,0 +1,41 @@
+.label {
+  color: var(--grayscale-hard);
+  display: block;
+}
+
+.field {
+  position: relative;
+  display: inline-flex;
+}
+
+.input {
+  padding: 8px 16px;
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--grayscale-light);
+  background: var(--surface);
+  color: var(--on-surface);
+  transition: border var(--duration), box-shadow var(--duration);
+  outline: none;
+
+  &.isFocus {
+    border: 1px solid var(--secondary);
+    box-shadow: 4px 8px 16px 0 rgba(112 192 91 / 20%);
+  }
+
+  &.disabled {
+    border: 1px solid var(--grayscale-light, #BFBFBF);
+    background: var(--grayscale-lightest, #F3F2F1);
+  }
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}

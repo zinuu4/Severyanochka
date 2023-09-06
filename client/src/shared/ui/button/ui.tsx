@@ -10,10 +10,10 @@ interface ButtonProps extends ReactTagProps<'button'> {
   as?: ElementType;
   href?: string;
   onlyIcon?: IconName;
-  size: 'large' | 'medium' | 'small';
-  accent: 'primary' | 'secondary' | 'grayscale' | 'error';
-  leftIcon: IconName;
-  rightIcon: IconName;
+  size?: 'large' | 'medium' | 'small';
+  accent?: 'primary' | 'secondary' | 'grayscale' | 'error';
+  leftIcon?: IconName;
+  rightIcon?: IconName;
   className?: string;
   children?: ReactNode;
 }
@@ -25,7 +25,7 @@ export const Button: React.FC<ButtonProps> = ({
   href,
   onlyIcon,
   size = 'medium',
-  accent,
+  accent = 'primary',
   leftIcon,
   rightIcon,
   className,
