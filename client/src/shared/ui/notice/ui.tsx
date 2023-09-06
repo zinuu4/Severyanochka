@@ -11,6 +11,7 @@ interface NoticeProps {
   label: string;
   leftIcon?: IconName;
   rightIcon?: IconName;
+  className?: string;
 }
 
 export const Notice: React.FC<NoticeProps> = ({
@@ -19,8 +20,9 @@ export const Notice: React.FC<NoticeProps> = ({
   label,
   leftIcon,
   rightIcon,
+  className,
 }) => (
-  <div className={clsx(styles.notice, styles[size], styles[accent])}>
+  <div className={clsx(styles.notice, styles[size], styles[accent], className)}>
     {leftIcon && <Icon name={leftIcon} className={styles.icon} />}
     <span
       className={clsx(styles.text, {

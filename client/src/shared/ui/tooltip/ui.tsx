@@ -10,6 +10,7 @@ interface ToolTipProps {
   theme: 'dark' | 'light';
   position: 'top' | 'right' | 'bottom' | 'left';
   leftIcon?: IconName;
+  className?: string;
 }
 
 export const ToolTip: React.FC<ToolTipProps> = ({
@@ -17,13 +18,14 @@ export const ToolTip: React.FC<ToolTipProps> = ({
   theme,
   position,
   leftIcon,
+  className,
 }) => {
   const dark = theme === 'dark';
   const light = theme === 'light';
 
   return (
     <label
-      className={clsx(styles.label, styles[position], {
+      className={clsx(styles.label, styles[position], className, {
         [styles.dark]: dark,
         [styles.light]: light,
       })}

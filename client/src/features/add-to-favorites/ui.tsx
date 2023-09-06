@@ -5,12 +5,18 @@ import { Icon } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 
-export const AddToFavoritesButton = () => {
+interface AddToFavoritesButtonProps {
+  className?: string;
+}
+
+export const AddToFavoritesButton: React.FC<AddToFavoritesButtonProps> = ({
+  className,
+}) => {
   const [inFavorites, setInFavorites] = useState(false);
 
   return (
     <button
-      className={clsx('btn-reset', styles.button, {
+      className={clsx('btn-reset', styles.button, className, {
         [styles.inFavorites]: inFavorites,
       })}
       onClick={() => setInFavorites((prev) => !prev)}

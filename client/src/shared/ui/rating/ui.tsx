@@ -7,12 +7,13 @@ import styles from './styles.module.scss';
 
 interface RatingProps {
   rating: number;
+  className?: string;
 }
 
-// TODO: implement halves
+// TODO: implement halves and sizes
 
-export const Rating: React.FC<RatingProps> = ({ rating }) => (
-  <div className={styles.wrapper}>
+export const Rating: React.FC<RatingProps> = ({ rating, className }) => (
+  <div className={clsx(styles.wrapper, className)}>
     {[1, 2, 3, 4, 5].map((star) => (
       <Icon
         key={star}

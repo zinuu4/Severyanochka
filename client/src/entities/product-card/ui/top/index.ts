@@ -1,0 +1,1 @@
+export { ProductTop } from './ui';
