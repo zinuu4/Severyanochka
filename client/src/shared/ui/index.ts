@@ -6,3 +6,4 @@ export * from './checkbox';
 export * from './tooltip';
 export * from './input';
 export * from './notice';
+export * from './rating';

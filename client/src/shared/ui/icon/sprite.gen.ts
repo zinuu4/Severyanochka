@@ -5,6 +5,7 @@ export interface SpritesMap {
     | 'chevron'
     | 'message'
     | 'search'
+    | 'star'
     | 'warning-alert'
     | 'logo-no-text'
     | 'logo-text-down'
@@ -17,6 +18,7 @@ export const SPRITES_META = {
     'chevron',
     'message',
     'search',
+    'star',
     'warning-alert',
     'logo-no-text',
     'logo-text-down',
@@ -29,6 +31,7 @@ export const SPRITES_META = {
     | 'chevron'
     | 'message'
     | 'search'
+    | 'star'
     | 'warning-alert'
     | 'logo-no-text'
     | 'logo-text-down'

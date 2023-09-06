@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 
-import { Input, Logo } from '@/shared/ui';
+import { Input, Logo, Rating } from '@/shared/ui';
 
 import { Catalog } from './catalog';
 
@@ -22,6 +22,7 @@ export const Header = () => {
         onChange={(e) => setValue(e.target.value)}
         rightBtn="search"
       />
+      <Rating rating={3} />
     </section>
   );
 };
