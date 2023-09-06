@@ -3,6 +3,7 @@ export interface SpritesMap {
     | 'alert-circle'
     | 'burger'
     | 'chevron'
+    | 'message'
     | 'search'
     | 'warning-alert'
     | 'logo-no-text'
@@ -14,6 +15,7 @@ export const SPRITES_META = {
     'alert-circle',
     'burger',
     'chevron',
+    'message',
     'search',
     'warning-alert',
     'logo-no-text',
@@ -25,6 +27,7 @@ export const SPRITES_META = {
     | 'alert-circle'
     | 'burger'
     | 'chevron'
+    | 'message'
     | 'search'
     | 'warning-alert'
     | 'logo-no-text'

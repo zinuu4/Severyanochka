@@ -47,7 +47,7 @@ export const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {onlyIcon ? (
-        <Icon name={onlyIcon} className={styles.chevronRight} />
+        <Icon name={onlyIcon} />
       ) : (
         <>
           {leftIcon && <Icon name={leftIcon} />}
