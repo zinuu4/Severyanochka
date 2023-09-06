@@ -24,9 +24,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Starting Node.JS ${{matrix.node-version}}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{matrix.node-version}}
+
+      - name: Cache Yarn dependencies
+        uses: actions/cache@v2.1.6
+        with:
+            path: ./server/node_modules
+            key: ${{ runner.os }}-yarn-${{ hashFiles('./server/yarn.lock') }}
+            restore-keys: |
+              ${{ runner.os }}-yarn-
 
       - name: install yarn
         run: npm install --global yarn
@@ -37,14 +45,11 @@ jobs:
 
       #      - name: testing
       #        run: yarn test
-      #        if: always()
 
       - name: linting ESLint
         working-directory: ./server
         run: yarn lint
-        if: always()
 
       - name: format Prettier
         working-directory: ./server
         run: yarn prettier
-        if: always()
