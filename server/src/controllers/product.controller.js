@@ -8,7 +8,7 @@ const createProduct = catchAsync(async (req, res) => {
   res.status(httpStatus.CREATED).send(product);
 });
 
-const getAllProducts = catchAsync(async (req, res) => {
+const getProducts = catchAsync(async (req, res) => {
   const products = await productService.getAllProducts();
   res.status(httpStatus.OK).send(products);
 });
@@ -33,7 +33,7 @@ const deleteProduct = catchAsync(async (req, res) => {
 
 module.exports = {
   createProduct,
-  getAllProducts,
+  getProducts,
   getProduct,
   updateProduct,
   deleteProduct,
