@@ -5,9 +5,9 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - name: Run PR Helper
+      - name: PR Helper
         id: runprhelper
-        uses: Matticusau/pr-helper@v1.2.3
+        uses: Matticusau/pr-helper@v1.3.3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           enable-prmerge-automation: true
