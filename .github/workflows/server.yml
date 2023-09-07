@@ -1,4 +1,4 @@
-name: Server linting, testing, building
+name: Server CI
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on:
