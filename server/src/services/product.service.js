@@ -38,5 +38,5 @@ module.exports = {
   getAllProducts,
   updateProduct,
   deleteProduct,
-  findByArticle: getProductByArticle,
+  getProductByArticle,
 };
