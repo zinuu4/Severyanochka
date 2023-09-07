@@ -3,6 +3,6 @@ node_modules
 # misc
 .DS_Store
 *.pem
-
+*.log
 /.idea
 /.vscode
