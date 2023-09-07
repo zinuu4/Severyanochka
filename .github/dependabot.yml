@@ -1,6 +1,6 @@
 version: 2
 updates:
-  - package-ecosystem: "yarn"  # Using yarn for dependency management
+  - package-ecosystem: "npm"  # Using yarn for dependency management
     directory: "/client"
     open-pull-requests-limit: 10
     schedule:
@@ -18,7 +18,7 @@ updates:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
 
-  - package-ecosystem: "yarn"  # Using yarn for dependency management
+  - package-ecosystem: "npm"  # Using yarn for dependency management
     directory: "/server"
     open-pull-requests-limit: 10
     schedule:
