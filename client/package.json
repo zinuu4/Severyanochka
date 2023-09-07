@@ -39,6 +39,7 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@feature-sliced/eslint-config": "^0.1.0-beta.6",
     "@neodx/svg": "^0.5.1",
+    "@next/bundle-analyzer": "^13.4.19",
     "@types/jest": "^29.5.4",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.5.0",
