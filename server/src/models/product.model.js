@@ -78,6 +78,9 @@ const productSchema = mongoose.Schema(
     article: {
       type: Number,
       required: true,
+      unique: true,
+      index: true,
+      default: () => Math.floor(Math.random() * 900000 + 100000),
     },
     available: {
       type: Boolean,
