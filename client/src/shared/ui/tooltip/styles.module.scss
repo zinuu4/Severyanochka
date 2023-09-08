@@ -9,8 +9,8 @@
   }
   
   &.light {
-    box-shadow: 0 8px 16px 0 rgba(0 0 0 / 15%);
-    background: var(--background-light-mode-blue-light-100);
+    box-shadow: var(--box-shadow-tooltip);
+    background: var(--background-blue-light-100);
   }
 }
 
@@ -27,7 +27,7 @@
   }
 
   &.light {
-    border-bottom: 4.5px solid var(--background-light-mode-blue-light-100);
+    border-bottom: 4.5px solid var(--background-blue-light-100);
   }
 
   &.top {

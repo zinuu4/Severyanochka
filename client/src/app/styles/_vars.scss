@@ -20,7 +20,8 @@
   --on-secondary: #FFF;
 
   // minor colors
-  --background-light-mode-blue-light-100: #F4F6FB;
+  // TODO: after end of developing check if this var using in several places and if not rename it
+  --background-blue-light-100: #F4F6FB;
 
   // grayscale
   --grayscale-lightest: #F3F2F1;
@@ -63,4 +64,29 @@
   // borders
   --rounded-sm: 4px;
   --rounded-md: 5px;
+
+  // box-shadows
+  --default-color: rgb(0 0 0 / 10%);
+  --primary-color: rgb(255 102 51 / 20%);
+  --secondary-color: rgb(112 192 91 / 20%);
+
+  --box-shadow-default-xs: 1px 2px 4px 0px var(--default-color);
+  --box-shadow-default-s: 2px 4px 8px 0px var(--default-color);
+  --box-shadow-default-m: 4px 8px 16px 0px var(--default-color);
+  --box-shadow-default-l: 8px 16px 32px 0px var(--default-color);
+  --box-shadow-default-xl: 16px 32px 64px 0px var(--default-color);
+
+  --box-shadow-primary-xs: 1px 2px 4px 0px var(--primary-color);
+  --box-shadow-primary-s: 2px 4px 8px 0px var(--primary-color);
+  --box-shadow-primary-m: 4px 8px 16px 0px var(--primary-color);
+  --box-shadow-primary-l: 8px 16px 32px 0px var(--primary-color);
+  --box-shadow-primary-xl: 16px 32px 64px 0px var(--primary-color);
+
+  --box-shadow-secondary-xs: 1px 2px 4px 0px var(--secondary-color);
+  --box-shadow-secondary-s: 2px 4px 8px 0px var(--secondary-color);
+  --box-shadow-secondary-m: 4px 8px 16px 0px var(--secondary-color);
+  --box-shadow-secondary-l: 8px 16px 32px 0px var(--secondary-color);
+  --box-shadow-secondary-xl: 16px 32px 64px 0px var(--secondary-color);
+
+  --box-shadow-tooltip: 0 8px 16px 0 rgba(0 0 0 / 15%);
 }

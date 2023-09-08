@@ -1,17 +1,32 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import React from 'react';
 
-import { Input } from '.';
+import { INPUT_TEST_IDS, Input } from './ui';
 
-const onChange = jest.fn();
+// TODO: clean ts-ignore
 
 describe('Input component', () => {
-  test('onChange works correctly', async () => {
-    render(<Input value="some value" onChange={onChange} />);
+  it('renders correctly', () => {
+    render(<Input value="" onChange={() => {}} />);
+    const inputElement = screen.getByTestId(INPUT_TEST_IDS.INPUT);
+    // @ts-ignore
+    expect(inputElement).toBeInTheDocument();
+    // @ts-ignore
+    expect(inputElement).toHaveValue('');
+  });
 
-    const inputElement = screen.getByRole('textbox');
+  it('onChange works correctly', async () => {
+    let inputValue = '';
+    const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      inputValue += event.target.value;
+    };
+
+    render(<Input value={inputValue} onChange={onChange} />);
+
+    const inputElement = screen.getByTestId(INPUT_TEST_IDS.INPUT);
     await userEvent.type(inputElement, 'React');
 
-    expect(onChange).toHaveBeenCalledTimes(5);
+    expect(inputValue).toBe('React');
   });
 });

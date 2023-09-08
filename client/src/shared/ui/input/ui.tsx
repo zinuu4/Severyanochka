@@ -4,19 +4,35 @@ import clsx from 'clsx';
 import React, { forwardRef, useState } from 'react';
 
 import { ReactTagProps } from '@/shared/types';
-import { Icon, IconName } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 
 interface InputProps extends ReactTagProps<'input'> {
   inputClassName?: string;
-  rightBtn?: IconName;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  RightElement?: React.JSXElementConstructor<any>;
+  rightElemOnlyIfValue?: boolean;
   disabled?: boolean;
   label?: string;
 }
 
+export const INPUT_TEST_IDS = {
+  INPUT: 'input',
+};
+
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ inputClassName, rightBtn, disabled, label, value, ...props }, ref) => {
+  (
+    {
+      inputClassName,
+      RightElement,
+      rightElemOnlyIfValue,
+      disabled,
+      label,
+      value,
+      ...props
+    },
+    ref,
+  ) => {
     const [isFocus, setIsFocus] = useState(false);
 
     const handleOnBlur = () => {
@@ -33,24 +49,22 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             value={value}
             onBlur={handleOnBlur}
+            data-testid={INPUT_TEST_IDS.INPUT}
             className={clsx(
               'input-reset',
               'text-s',
               styles.input,
-              inputClassName,
-              isFocus && styles.isFocus,
-              disabled && styles.disabled,
+              [inputClassName],
+              {
+                [styles.isFocus]: isFocus,
+                [styles.disabled]: disabled,
+              },
             )}
             onFocus={() => setIsFocus(true)}
             {...props}
           />
-          {rightBtn && (
-            <button
-              className={clsx('btn-reset', styles.btn, value && styles.visible)}
-              type="button"
-            >
-              <Icon name={rightBtn} />
-            </button>
+          {RightElement && (rightElemOnlyIfValue ? value !== '' : true) && (
+            <RightElement />
           )}
         </div>
       </>

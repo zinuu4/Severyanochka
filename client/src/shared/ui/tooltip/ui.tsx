@@ -5,54 +5,34 @@ import { Icon, IconName } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 
-interface ToolTipProps {
+interface TooltipProps {
   label: string;
   theme: 'dark' | 'light';
-  position: 'top' | 'right' | 'bottom' | 'left';
+  position?: 'top' | 'right' | 'bottom' | 'left';
   leftIcon?: IconName;
   className?: string;
 }
 
-export const ToolTip: React.FC<ToolTipProps> = ({
+export const Tooltip: React.FC<TooltipProps> = ({
   label,
   theme,
-  position,
+  position = 'top',
   leftIcon,
   className,
 }) => {
   const dark = theme === 'dark';
   const light = theme === 'light';
+  const themeMods = { [styles.dark]: dark, [styles.light]: light };
 
   return (
     <label
-      className={clsx(styles.label, styles[position], className, {
-        [styles.dark]: dark,
-        [styles.light]: light,
-      })}
+      className={clsx(styles.label, styles[position], className, themeMods)}
     >
-      <div
-        className={clsx(styles.triangle, styles[position], {
-          [styles.dark]: dark,
-          [styles.light]: light,
-        })}
-      />
+      <div className={clsx(styles.triangle, styles[position], themeMods)} />
       {leftIcon && (
-        <Icon
-          name={leftIcon}
-          className={clsx(styles.icon, {
-            [styles.dark]: dark,
-            [styles.light]: light,
-          })}
-        />
+        <Icon name={leftIcon} className={clsx(styles.icon, themeMods)} />
       )}
-      <span
-        className={clsx(styles.text, {
-          [styles.dark]: dark,
-          [styles.light]: light,
-        })}
-      >
-        {label}
-      </span>
+      <span className={clsx(styles.text, themeMods)}>{label}</span>
     </label>
   );
 };
