@@ -3,7 +3,6 @@ const { objectId } = require('./custom.validation');
 
 const createProduct = {
   body: Joi.object().keys({
-    article: Joi.number().required(),
     available: Joi.boolean().required(),
     name: Joi.string().required(),
     images: Joi.array()
@@ -59,13 +58,13 @@ const getProducts = {
 
 const getProduct = {
   params: Joi.object().keys({
-    productId: Joi.string().custom(objectId),
+    article: Joi.string().custom(objectId),
   }),
 };
 
 const updateProduct = {
   params: Joi.object().keys({
-    productId: Joi.required().custom(objectId),
+    article: Joi.required().custom(objectId),
   }),
   body: Joi.object()
     .keys({
@@ -110,7 +109,7 @@ const updateProduct = {
 
 const deleteProduct = {
   params: Joi.object().keys({
-    productId: Joi.string().custom(objectId),
+    article: Joi.string().custom(objectId),
   }),
 };
 
