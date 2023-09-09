@@ -1,1 +1,1 @@
-export { ProductTop } from './ui';
+export { ProductCardHeader } from './ui';

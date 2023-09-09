@@ -1,1 +1,1 @@
-export { ProductInfo } from './ui';
+export { ProductCardInfo } from './ui';

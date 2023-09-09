@@ -19,16 +19,18 @@ export const Rating: React.FC<RatingProps> = ({
   size = 'medium',
 }) => (
   <div className={clsx(styles.wrapper, className)}>
-    {[1, 2, 3, 4, 5].map((star) => (
-      <Icon
-        key={star}
-        name="star"
-        className={clsx(
-          styles.star,
-          styles[size],
-          star <= rating && styles.selected,
-        )}
-      />
-    ))}
+    {[1, 2, 3, 4, 5].map((star) => {
+      const activeStar = star <= rating;
+
+      return (
+        <Icon
+          key={star}
+          name="star"
+          className={clsx(styles.star, styles[size], {
+            [styles.selected]: activeStar,
+          })}
+        />
+      );
+    })}
   </div>
 );

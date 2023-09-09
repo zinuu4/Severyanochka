@@ -7,7 +7,7 @@ import { ProductPrices } from './prices';
 
 import styles from './styles.module.scss';
 
-export const ProductInfo = () => (
+export const ProductCardInfo = () => (
   <>
     <ProductPrices />
     <div className={clsx('text-s', styles.name)}>Чипсы Lays</div>

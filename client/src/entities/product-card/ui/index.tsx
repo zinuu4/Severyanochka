@@ -2,18 +2,25 @@
 import Link from 'next/link';
 import React from 'react';
 
-import { AddToCartButton } from './add-to-cart';
-import { ProductInfo } from './info';
-import { ProductTop } from './top';
+import { ProductCardInfo } from './info';
+import { ProductCardHeader } from './top';
 
 import styles from './styles.module.scss';
 
-export const ProductCard = () => (
+interface ProductCardProps {
+  AddToCartButton?: React.ReactNode;
+  AddToFavoritesButton?: React.ReactNode;
+}
+
+export const ProductCard: React.FC<ProductCardProps> = ({
+  AddToCartButton,
+  AddToFavoritesButton,
+}) => (
   <Link href="/" className={styles.card}>
-    <ProductTop />
+    <ProductCardHeader AddToFavoritesButton={AddToFavoritesButton} />
     <div className={styles.content}>
-      <ProductInfo />
-      <AddToCartButton />
+      <ProductCardInfo />
+      {AddToCartButton}
     </div>
   </Link>
 );

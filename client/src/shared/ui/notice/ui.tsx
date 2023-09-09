@@ -21,18 +21,23 @@ export const Notice: React.FC<NoticeProps> = ({
   leftIcon,
   rightIcon,
   className,
-}) => (
-  <div className={clsx(styles.notice, styles[size], styles[accent], className)}>
-    {leftIcon && <Icon name={leftIcon} className={styles.icon} />}
-    <span
-      className={clsx(styles.text, {
-        'text-xs': size === 'small',
-      })}
+}) => {
+  const small = size === 'small';
+  return (
+    <div
+      className={clsx(styles.notice, styles[size], styles[accent], className)}
     >
-      {label}
-    </span>
-    {rightIcon && (
-      <Icon name={rightIcon} className={clsx(styles.icon, styles[size])} />
-    )}
-  </div>
-);
+      {leftIcon && <Icon name={leftIcon} className={styles.icon} />}
+      <span
+        className={clsx(styles.text, {
+          'text-xs': small,
+        })}
+      >
+        {label}
+      </span>
+      {rightIcon && (
+        <Icon name={rightIcon} className={clsx(styles.icon, styles[size])} />
+      )}
+    </div>
+  );
+};

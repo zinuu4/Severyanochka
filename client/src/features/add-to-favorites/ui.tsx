@@ -14,14 +14,14 @@ export const AddToFavoritesButton: React.FC<AddToFavoritesButtonProps> = ({
   className,
   ...props
 }) => {
-  const [inFavorites, setInFavorites] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   return (
     <button
-      className={clsx('btn-reset', styles.button, className, {
-        [styles.inFavorites]: inFavorites,
+      className={clsx('btn-reset', styles.button, [className], {
+        [styles.inFavorites]: isFavorite,
       })}
-      onClick={() => setInFavorites((prev) => !prev)}
+      onClick={() => setIsFavorite((prev) => !prev)}
       {...props}
     >
       <Icon name="heart" />

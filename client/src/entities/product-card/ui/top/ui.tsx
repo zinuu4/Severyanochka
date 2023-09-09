@@ -1,12 +1,17 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { AddToFavoritesButton } from '@/features/add-to-favorites';
 import { Notice } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 
-export const ProductTop = () => (
+interface ProductCardHeaderProps {
+  AddToFavoritesButton?: React.ReactNode;
+}
+
+export const ProductCardHeader: React.FC<ProductCardHeaderProps> = ({
+  AddToFavoritesButton,
+}) => (
   <div className={styles.field}>
     <div className={styles.imageWrapper}>
       <Image
@@ -16,7 +21,7 @@ export const ProductTop = () => (
         sizes="100%"
         className={styles.image}
       />
-      <AddToFavoritesButton className={styles.favoriteButton} />
+      {AddToFavoritesButton}
       <Notice label="-50%" className={styles.notice} />
     </div>
   </div>
