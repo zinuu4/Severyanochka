@@ -14,7 +14,7 @@ const getAllProducts = catchAsync(async (req, res) => {
 });
 
 const getProduct = catchAsync(async (req, res) => {
-  const product = await productService.getProductById(req.params.productId);
+  const product = await productService.getProductByArticle(req.params.article);
   if (!product) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Product not found');
   }
@@ -22,12 +22,12 @@ const getProduct = catchAsync(async (req, res) => {
 });
 
 const updateProduct = catchAsync(async (req, res) => {
-  const product = await productService.updateProduct(req.params.productId, req.body);
+  const product = await productService.updateProduct(req.params.article, req.body);
   res.status(httpStatus.OK).send(product);
 });
 
 const deleteProduct = catchAsync(async (req, res) => {
-  await productService.deleteProduct(req.params.productId);
+  await productService.deleteProduct(req.params.article);
   res.status(httpStatus.NO_CONTENT).send();
 });
 

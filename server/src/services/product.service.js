@@ -7,17 +7,15 @@ const createProduct = async (productBody) => {
 };
 
 const getAllProducts = async () => {
-  const products = await Product.find();
-  return products;
+  return Product.find();
 };
 
-const getProductById = async (productId) => {
-  const product = await Product.findById(productId);
-  return product;
+const getProductByArticle = async (article) => {
+  return Product.findOne({ article });
 };
 
-const updateProduct = async (productId, updateBody) => {
-  const product = await getProductById(productId);
+const updateProduct = async (article, updateBody) => {
+  const product = await getProductByArticle(article);
   if (!product) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Product not found');
   }
@@ -26,8 +24,8 @@ const updateProduct = async (productId, updateBody) => {
   return product;
 };
 
-const deleteProduct = async (productId) => {
-  const product = await getProductById(productId);
+const deleteProduct = async (article) => {
+  const product = await getProductByArticle(article);
   if (!product) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Product not found');
   }
@@ -38,7 +36,7 @@ const deleteProduct = async (productId) => {
 module.exports = {
   createProduct,
   getAllProducts,
-  getProductById,
   updateProduct,
   deleteProduct,
+  getProductByArticle,
 };
