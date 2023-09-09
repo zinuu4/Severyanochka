@@ -1,11 +1,86 @@
 const mongoose = require('mongoose');
 const { paginate, toJSON } = require('./plugins');
 
+const imageSchema = mongoose.Schema({
+  url: {
+    type: String,
+    required: true,
+  },
+});
+
+const reviewSchema = mongoose.Schema(
+  {
+    score: {
+      type: String,
+      required: true,
+    },
+    text: {
+      type: String,
+      required: true,
+    },
+    user: {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: 'User',
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
+
+const reviewsSummarySchema = mongoose.Schema({
+  totalReviewsQuantity: {
+    type: String,
+    required: true,
+  },
+  finalEvaluation: {
+    type: String,
+    required: true,
+  },
+  fivePointsQuantity: {
+    type: String,
+    required: true,
+  },
+  fourPointsQuantity: {
+    type: String,
+    required: true,
+  },
+  threePointsQuantity: {
+    type: String,
+    required: true,
+  },
+  twoPointsQuantity: {
+    type: String,
+    required: true,
+  },
+  onePointsQuantity: {
+    type: String,
+    required: true,
+  },
+});
+
+const infoSchema = mongoose.Schema({
+  brand: {
+    type: String,
+    required: true,
+  },
+  manufacturerCountry: {
+    type: String,
+    required: true,
+  },
+  weight: {
+    type: String,
+    required: true,
+  },
+});
+
 const productSchema = mongoose.Schema(
   {
     article: {
       type: Number,
       required: true,
+      unique: true,
+      index: true,
+      default: () => Math.floor(Math.random() * 900000 + 100000),
     },
     available: {
       type: Boolean,
@@ -15,12 +90,12 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    // images: {
-    //   type: [imageSchema],
-    //   required: true,
-    // },
+    images: {
+      type: [imageSchema],
+      required: true,
+    },
     price: {
-      type: mongoose.SchemaTypes.Decimal128,
+      type: Number,
       required: true,
     },
     discounted: {
@@ -30,68 +105,26 @@ const productSchema = mongoose.Schema(
       type: Number,
     },
     discountedPrice: {
-      type: mongoose.SchemaTypes.Decimal128,
+      type: Number,
     },
     bonusAmount: {
       type: Number,
       required: true,
     },
-    // category: {
-    //   type: categorySchema,
-    //   required: true,
-    // },
-    info: {
-      type: {
-        brand: {
-          type: String,
-          required: true,
-        },
-        manufacturerCountry: {
-          type: String,
-          required: true,
-        },
-        weight: {
-          type: String,
-          required: true,
-        },
-      },
+    category: {
+      type: String,
       required: true,
     },
-    // reviews: {
-    //   type: [reviewSchema],
-    //   required: true,
-    // },
+    info: {
+      type: infoSchema,
+      required: true,
+    },
+    reviews: {
+      type: [reviewSchema],
+      required: true,
+    },
     reviewsSummary: {
-      type: {
-        totalReviewsQuantity: {
-          type: Number,
-          required: true,
-        },
-        averageRating: {
-          type: Number,
-          required: true,
-        },
-        fivePointsQuantity: {
-          type: Number,
-          required: true,
-        },
-        fourPointsQuantity: {
-          type: Number,
-          required: true,
-        },
-        threePointsQuantity: {
-          type: Number,
-          required: true,
-        },
-        twoPointsQuantity: {
-          type: Number,
-          required: true,
-        },
-        onePointQuantity: {
-          type: Number,
-          required: true,
-        },
-      },
+      type: reviewsSummarySchema,
       required: true,
     },
   },
