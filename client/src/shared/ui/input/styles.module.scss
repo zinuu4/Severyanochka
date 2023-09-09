@@ -14,7 +14,9 @@
   border: 1px solid var(--grayscale-light);
   background: var(--surface);
   color: var(--on-surface);
-  transition: border var(--duration), box-shadow var(--duration);
+  transition:
+    border var(--duration),
+    box-shadow var(--duration);
   outline: none;
 
   &.isFocus {
@@ -23,7 +25,7 @@
   }
 
   &.disabled {
-    border: 1px solid var(--grayscale-light, #BFBFBF);
-    background: var(--grayscale-lightest, #F3F2F1);
+    border: 1px solid var(--grayscale-light, #bfbfbf);
+    background: var(--grayscale-lightest, #f3f2f1);
   }
 }

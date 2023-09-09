@@ -4,42 +4,42 @@
   --content-width: 1230px;
   --container-offset: 15px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-  --font-family: 'Rubik', sans-serif;
+  --font-family: "Rubik", sans-serif;
 
   // animations
   --duration: 0.3s;
 
   // main colors
-  --background: #F4F4F2;
-  --surface: #FFF;
-  --primary: #F63;
-  --secondary: #70C05B;
-  --on-background: #291E0F;
+  --background: #f4f4f2;
+  --surface: #fff;
+  --primary: #f63;
+  --secondary: #70c05b;
+  --on-background: #291e0f;
   --on-surface: #414141;
-  --on-primary: #FFF;
-  --on-secondary: #FFF;
+  --on-primary: #fff;
+  --on-secondary: #fff;
 
   // minor colors
   // TODO: after end of developing check if this var using in several places and if not rename it
-  --background-blue-light-100: #F4F6FB;
+  --background-blue-light-100: #f4f6fb;
 
   // grayscale
-  --grayscale-lightest: #F3F2F1;
-  --grayscale-light: #BFBFBF;
-  --grayscale-hard: #8F8F8F;
+  --grayscale-lightest: #f3f2f1;
+  --grayscale-light: #bfbfbf;
+  --grayscale-hard: #8f8f8f;
   --grayscale-hardest: #606060;
 
   // pallete
-  --pallete-success: #008C49;
-  --pallete-info: #1CB9FC;
-  --pallete-warning: #FCA21C;
-  --pallete-error: #D80000;
-  --pallete-on-error: #F2F2F2;
+  --pallete-success: #008c49;
+  --pallete-info: #1cb9fc;
+  --pallete-warning: #fca21c;
+  --pallete-error: #d80000;
+  --pallete-on-error: #f2f2f2;
 
   // muted
-  --primary-muted: #FCD5BA;
-  --secondary-muted: #E5FFDE;
-  --pallete-error-muted: #FFC7C7;
+  --primary-muted: #fcd5ba;
+  --secondary-muted: #e5ffde;
+  --pallete-error-muted: #ffc7c7;
 
   // font
   --font-xs-laptop: 12px;
@@ -47,7 +47,7 @@
 
   --font-s-laptop: 16px;
   --font-s-header-laptop: 24px;
-  
+
   --font-m-laptop: 18px;
   --font-m-header-laptop: 36px;
 
