@@ -11,7 +11,7 @@ const imageSchema = mongoose.Schema({
 const reviewSchema = mongoose.Schema(
   {
     score: {
-      type: String,
+      type: Number,
       required: true,
     },
     text: {
@@ -29,31 +29,31 @@ const reviewSchema = mongoose.Schema(
 
 const reviewsSummarySchema = mongoose.Schema({
   totalReviewsQuantity: {
-    type: String,
+    type: Number,
     required: true,
   },
   finalEvaluation: {
-    type: String,
+    type: Number,
     required: true,
   },
   fivePointsQuantity: {
-    type: String,
+    type: Number,
     required: true,
   },
   fourPointsQuantity: {
-    type: String,
+    type: Number,
     required: true,
   },
   threePointsQuantity: {
-    type: String,
+    type: Number,
     required: true,
   },
   twoPointsQuantity: {
-    type: String,
+    type: Number,
     required: true,
   },
   onePointsQuantity: {
-    type: String,
+    type: Number,
     required: true,
   },
 });
@@ -89,6 +89,7 @@ const productSchema = mongoose.Schema(
     name: {
       type: String,
       required: true,
+      unique: true,
     },
     images: {
       type: [imageSchema],
