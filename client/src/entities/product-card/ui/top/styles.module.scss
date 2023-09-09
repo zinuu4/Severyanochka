@@ -1,0 +1,23 @@
+.field {
+  width: 100%;
+  height: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  padding-top: 100%;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover
+}
+
+.notice {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 2;
+}

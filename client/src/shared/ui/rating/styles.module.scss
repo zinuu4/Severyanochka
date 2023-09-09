@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+}
+
+.star {
+  color: var(--grayscale-light);
+  
+  &.selected {
+    color: var(--primary);
+  }
+
+  &.medium {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.small {
+    width: 16px;
+    height: 16px;    
+  }
+}
+
+.star:not(:last-child) {
+  margin-right: 4px;
+}

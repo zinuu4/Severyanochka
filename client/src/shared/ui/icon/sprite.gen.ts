@@ -1,7 +1,12 @@
 export interface SpritesMap {
   sprite:
+    | 'alert-circle'
     | 'burger'
     | 'chevron'
+    | 'heart'
+    | 'message'
+    | 'search'
+    | 'star'
     | 'warning-alert'
     | 'logo-no-text'
     | 'logo-text-down'
@@ -9,8 +14,13 @@ export interface SpritesMap {
 }
 export const SPRITES_META = {
   sprite: [
+    'alert-circle',
     'burger',
     'chevron',
+    'heart',
+    'message',
+    'search',
+    'star',
     'warning-alert',
     'logo-no-text',
     'logo-text-down',
@@ -18,8 +28,13 @@ export const SPRITES_META = {
   ],
 } satisfies {
   sprite: Array<
+    | 'alert-circle'
     | 'burger'
     | 'chevron'
+    | 'heart'
+    | 'message'
+    | 'search'
+    | 'star'
     | 'warning-alert'
     | 'logo-no-text'
     | 'logo-text-down'

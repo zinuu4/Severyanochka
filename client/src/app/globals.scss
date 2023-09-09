@@ -20,6 +20,11 @@ body {
   font-family: var(--font-family);
 }
 
+a {
+  text-decoration: none;
+  color: var(--on-surface);
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
@@ -34,7 +39,6 @@ body {
 
 .btn-reset {
   border: none;
-  font-family: inherit;
   padding: 0;
   outline: none;
   background-color: transparent;

@@ -1,14 +1,13 @@
+'use client';
+
 import React from 'react';
 
-import { Checkbox, Logo, ToggleButton } from '@/shared/ui';
-
-import { Catalog } from './catalog';
+import { ProductCard } from '@/entities/product-card';
+import { Logo } from '@/shared/ui';
 
 export const Header = () => (
   <section className="container">
     <Logo type="text-right" />
-    <Catalog />
-    <ToggleButton />
-    <Checkbox />
+    <ProductCard />
   </section>
 );
