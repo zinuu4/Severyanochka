@@ -113,7 +113,8 @@ const productSchema = mongoose.Schema(
       required: true,
     },
     category: {
-      type: String,
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: 'Category',
       required: true,
     },
     info: {
