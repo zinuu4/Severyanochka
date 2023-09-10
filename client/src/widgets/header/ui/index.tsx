@@ -6,6 +6,7 @@ import { Logo } from '@/shared/ui';
 
 import { Catalog } from './catalog';
 import { MainMenu } from './main-menu';
+import { ProfileButton } from './profile-btn';
 
 import styles from './styles.module.scss';
 
@@ -16,6 +17,7 @@ export const Header = () => (
       <Catalog />
       <MainSearch />
       <MainMenu />
+      <ProfileButton />
     </section>
   </header>
 );

@@ -5,12 +5,12 @@ export interface SpritesMap {
     | 'chevron'
     | 'heart'
     | 'message'
+    | 'package'
     | 'search'
-    | 'star'
-    | 'warning-alert'
-    | 'shopping-cart'
     | 'shopping-cart copy'
-    | 'package';
+    | 'shopping-cart'
+    | 'star'
+    | 'warning-alert';
 }
 export const SPRITES_META = {
   sprite: [
@@ -19,12 +19,12 @@ export const SPRITES_META = {
     'chevron',
     'heart',
     'message',
+    'package',
     'search',
+    'shopping-cart copy',
+    'shopping-cart',
     'star',
     'warning-alert',
-    'shopping-cart',
-    'shopping-cart copy',
-    'package',
   ],
 } satisfies {
   sprite: Array<
@@ -33,11 +33,11 @@ export const SPRITES_META = {
     | 'chevron'
     | 'heart'
     | 'message'
+    | 'package'
     | 'search'
+    | 'shopping-cart copy'
+    | 'shopping-cart'
     | 'star'
     | 'warning-alert'
-    | 'shopping-cart'
-    | 'shopping-cart copy'
-    | 'package'
   >;
 };
