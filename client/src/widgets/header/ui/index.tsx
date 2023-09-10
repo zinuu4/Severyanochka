@@ -12,12 +12,12 @@ import styles from './styles.module.scss';
 
 export const Header = () => (
   <header className={styles.header}>
-    <section className={clsx(styles.container, 'container')}>
+    <div className={clsx(styles.container, 'container')}>
       <Logo type="text-right" wrapperClassName={styles.logoWrapper} />
       <Catalog />
       <MainSearch />
       <MainMenu />
       <ProfileButton />
-    </section>
+    </div>
   </header>
 );
