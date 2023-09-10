@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useState, ReactNode } from 'react';
 
 import { ReactTagProps } from '@/shared/types';
 
@@ -9,8 +9,7 @@ import styles from './styles.module.scss';
 
 interface InputProps extends ReactTagProps<'input'> {
   inputClassName?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  RightElement?: React.JSXElementConstructor<any>;
+  RightElement?: ReactNode;
   rightElemOnlyIfValue?: boolean;
   disabled?: boolean;
   label?: string;
@@ -63,9 +62,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             onFocus={() => setIsFocus(true)}
             {...props}
           />
-          {RightElement && (rightElemOnlyIfValue ? value !== '' : true) && (
-            <RightElement />
-          )}
+          {rightElemOnlyIfValue ? value !== '' && RightElement : RightElement}
         </div>
       </>
     );

@@ -3,6 +3,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import { MainSearch } from '@/features/main-search';
 import { Logo } from '@/shared/ui';
 
 import { Catalog } from './catalog';
@@ -14,6 +15,7 @@ export const Header = () => (
     <section className={clsx(styles.container, 'container')}>
       <Logo type="text-right" wrapperClassName={styles.logoWrapper} />
       <Catalog />
+      <MainSearch />
     </section>
   </header>
 );
