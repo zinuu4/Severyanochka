@@ -117,6 +117,11 @@ const productSchema = mongoose.Schema(
       ref: 'Category',
       required: true,
     },
+    subCategory: {
+      type: String,
+      trim: true,
+      minlength: 3,
+    },
     info: {
       type: infoSchema,
       required: true,

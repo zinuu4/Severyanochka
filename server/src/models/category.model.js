@@ -10,6 +10,13 @@ const categorySchema = mongoose.Schema({
     index: true,
     minlength: 3,
   },
+  subCategories: [
+    {
+      type: String,
+      trim: true,
+      minlength: 3,
+    },
+  ],
 });
 
 // add plugin that converts mongoose to json

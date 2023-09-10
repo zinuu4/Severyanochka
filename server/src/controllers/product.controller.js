@@ -2,6 +2,7 @@ const httpStatus = require('http-status');
 const ApiError = require('../utils/ApiError');
 const catchAsync = require('../utils/catchAsync');
 const { productService } = require('../services');
+const pick = require('../utils/pick');
 
 const createProduct = catchAsync(async (req, res) => {
   const product = await productService.createProduct(req.body);
@@ -9,8 +10,10 @@ const createProduct = catchAsync(async (req, res) => {
 });
 
 const getProducts = catchAsync(async (req, res) => {
-  const products = await productService.getAllProducts();
-  res.status(httpStatus.OK).send(products);
+  const filter = pick(req.query, ['name', 'category', 'subCategory']);
+  const options = pick(req.query, ['sortBy', 'limit', 'page']);
+  const result = await productService.queryProducts(filter, options);
+  res.status(httpStatus.FOUND).send(result);
 });
 
 const getProduct = catchAsync(async (req, res) => {

@@ -7,6 +7,9 @@ const createProduct = async (productBody) => {
   if (!category) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Category not found');
   }
+  if (category.subCategories.length > 0 && !category.subCategories.includes(productBody.subcategory)) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Subcategory not found');
+  }
   const updatedProductBody = { ...productBody };
   updatedProductBody.category = category._id;
   return Product.create(updatedProductBody).then((product) => {
@@ -14,8 +17,16 @@ const createProduct = async (productBody) => {
   });
 };
 
-const getAllProducts = async () => {
-  return Product.find();
+const queryProducts = async (filter, options) => {
+  if (filter.category) {
+    const category = await Category.findOne({ name: filter.category });
+    if (!category) {
+      throw new ApiError(httpStatus.NOT_FOUND, 'Category not found');
+    }
+    filter.category = category._id;
+  }
+  const products = await Product.paginate(filter, options);
+  return products;
 };
 
 const getProductByArticle = async (article) => {
@@ -27,6 +38,23 @@ const updateProduct = async (article, updateBody) => {
   if (!product) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Product not found');
   }
+  // If the category is being updated
+  if (updateBody.category) {
+    const category = await Category.findOne({ name: updateBody.category });
+    if (!category) {
+      throw new ApiError(httpStatus.NOT_FOUND, 'Category not found');
+    }
+    updateBody.category = category._id; // Replace category name with its ObjectId
+  }
+
+  // If the subCategory is being updated
+  if (updateBody.subCategory) {
+    const category = await Category.findById(product.category);
+    if (!category || !category.subCategories.includes(updateBody.subCategory)) {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Subcategory not found in the provided category');
+    }
+  }
+
   Object.assign(product, updateBody);
   await product.save();
   return product;
@@ -43,7 +71,7 @@ const deleteProduct = async (article) => {
 
 module.exports = {
   createProduct,
-  getAllProducts,
+  queryProducts,
   updateProduct,
   deleteProduct,
   getProductByArticle,
