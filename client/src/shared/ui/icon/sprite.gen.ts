@@ -7,7 +7,10 @@ export interface SpritesMap {
     | 'message'
     | 'search'
     | 'star'
-    | 'warning-alert';
+    | 'warning-alert'
+    | 'shopping-cart'
+    | 'shopping-cart copy'
+    | 'package';
 }
 export const SPRITES_META = {
   sprite: [
@@ -19,6 +22,9 @@ export const SPRITES_META = {
     'search',
     'star',
     'warning-alert',
+    'shopping-cart',
+    'shopping-cart copy',
+    'package',
   ],
 } satisfies {
   sprite: Array<
@@ -30,5 +36,8 @@ export const SPRITES_META = {
     | 'search'
     | 'star'
     | 'warning-alert'
+    | 'shopping-cart'
+    | 'shopping-cart copy'
+    | 'package'
   >;
 };

@@ -2,4 +2,10 @@ import React from 'react';
 
 import { SearchInput } from './search-input';
 
-export const MainSearch = () => <SearchInput />;
+import styles from './styles.module.scss';
+
+export const MainSearch = () => (
+  <div className={styles.search}>
+    <SearchInput />
+  </div>
+);
