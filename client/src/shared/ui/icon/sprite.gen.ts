@@ -7,10 +7,7 @@ export interface SpritesMap {
     | 'message'
     | 'search'
     | 'star'
-    | 'warning-alert'
-    | 'logo-no-text'
-    | 'logo-text-down'
-    | 'logo-text-right';
+    | 'warning-alert';
 }
 export const SPRITES_META = {
   sprite: [
@@ -22,9 +19,6 @@ export const SPRITES_META = {
     'search',
     'star',
     'warning-alert',
-    'logo-no-text',
-    'logo-text-down',
-    'logo-text-right',
   ],
 } satisfies {
   sprite: Array<
@@ -36,8 +30,5 @@ export const SPRITES_META = {
     | 'search'
     | 'star'
     | 'warning-alert'
-    | 'logo-no-text'
-    | 'logo-text-down'
-    | 'logo-text-right'
   >;
 };
