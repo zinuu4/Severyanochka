@@ -7,7 +7,7 @@
   &.dark {
     background: var(--pallete-error);
   }
-  
+
   &.light {
     box-shadow: var(--box-shadow-tooltip);
     background: var(--background-blue-light-100);
@@ -65,12 +65,11 @@
   &.dark {
     color: var(--pallete-on-error);
   }
-  
+
   &.light {
     color: var(--text-dark);
   }
 }
-
 
 .icon {
   width: 24px;
@@ -80,7 +79,7 @@
   &.dark {
     fill: var(--pallete-on-error);
   }
-  
+
   // TODO: define is this color uses somewhere else
   &.light {
     color: #414141;
