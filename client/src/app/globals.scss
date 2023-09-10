@@ -44,21 +44,3 @@ a {
   background-color: transparent;
   cursor: pointer;
 }
-
-// TODO: clean menu styles from globals
-
-.catalog-menu {
-  opacity: 0;
-  visibility: hidden;
-  transition: display var(--duration);
-}
-
-.catalog-menu:hover {
-  opacity: 1;
-  visibility: visible;
-}
-
-.catalog-btn:hover + .catalog-menu {
-  opacity: 1;
-  visibility: visible;
-}

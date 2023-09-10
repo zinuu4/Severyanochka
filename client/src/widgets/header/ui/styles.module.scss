@@ -1,14 +1,20 @@
 .header {
-  display: flex;
   height: 72px;
+  background: var(--surface);
+  box-shadow: var(--box-shadow-default-s);
+}
+
+.container {
+  height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  background: var(--surface, #FFF);
-  box-shadow: var(--box-shadow-default-s);
+  position: relative;
 }
 
 .logoWrapper {
   width: 152px;
   height: 32px;
+  margin-right: 40px;
 }

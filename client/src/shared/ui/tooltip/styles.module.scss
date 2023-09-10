@@ -9,7 +9,7 @@
   }
 
   &.light {
-    box-shadow: var(--box-shadow-tooltip);
+    box-shadow: var(--box-shadow-light-default);
     background: var(--background-blue-light-100);
   }
 }

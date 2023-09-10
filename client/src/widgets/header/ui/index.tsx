@@ -10,8 +10,10 @@ import { Catalog } from './catalog';
 import styles from './styles.module.scss';
 
 export const Header = () => (
-  <section className={clsx(styles.header, 'container')}>
-    <Logo type="text-right" wrapperClassName={styles.logoWrapper} />
-    <Catalog />
-  </section>
+  <header className={styles.header}>
+    <section className={clsx(styles.container, 'container')}>
+      <Logo type="text-right" wrapperClassName={styles.logoWrapper} />
+      <Catalog />
+    </section>
+  </header>
 );
