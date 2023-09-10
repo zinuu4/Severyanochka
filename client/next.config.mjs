@@ -7,7 +7,7 @@ const nextConfig = {
     if (!isServer) {
       config.plugins.push(
         svg({
-          root: 'assets',
+          root: 'src/shared/ui/icon/assets',
           output: 'public',
           metadata: 'src/shared/ui/icon/sprite.gen.ts',
           resetColors: {
