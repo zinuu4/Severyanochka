@@ -24,9 +24,9 @@ export const CatalogMenu: React.FC<CatalogMenuProps> = ({
     {productColumns.map((column, columnIndex) => (
       // eslint-disable-next-line react/no-array-index-key
       <div key={columnIndex} className={styles.row}>
-        {column.map((product) => (
-          <button key={product} className={clsx('btn-reset', styles.item)}>
-            {product}
+        {column.map(({ label }) => (
+          <button key={label} className={clsx('btn-reset', styles.item)}>
+            {label}
           </button>
         ))}
       </div>
