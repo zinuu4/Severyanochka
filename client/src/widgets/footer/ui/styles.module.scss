@@ -1,0 +1,11 @@
+.footer {
+  background-image: url('/footer-bg.png');
+  height: 100px;
+  background-color: var(--footer-background);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
