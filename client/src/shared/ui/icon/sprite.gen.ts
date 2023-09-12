@@ -10,7 +10,11 @@ export interface SpritesMap {
     | 'shopping-cart copy'
     | 'shopping-cart'
     | 'star'
-    | 'warning-alert';
+    | 'warning-alert'
+    | 'instagram'
+    | 'vkontakte'
+    | 'facebook'
+    | 'odnoklassniki';
 }
 export const SPRITES_META = {
   sprite: [
@@ -25,6 +29,10 @@ export const SPRITES_META = {
     'shopping-cart',
     'star',
     'warning-alert',
+    'instagram',
+    'vkontakte',
+    'facebook',
+    'odnoklassniki',
   ],
 } satisfies {
   sprite: Array<
@@ -39,5 +47,9 @@ export const SPRITES_META = {
     | 'shopping-cart'
     | 'star'
     | 'warning-alert'
+    | 'instagram'
+    | 'vkontakte'
+    | 'facebook'
+    | 'odnoklassniki'
   >;
 };
