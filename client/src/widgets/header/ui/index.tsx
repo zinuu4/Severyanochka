@@ -1,17 +1,23 @@
-'use client';
-
+import clsx from 'clsx';
 import React from 'react';
 
-import { ProductCard } from '@/entities/product-card';
+import { MainSearch } from '@/features/main-search';
 import { Logo } from '@/shared/ui';
+
+import { Catalog } from './catalog';
+import { MainMenu } from './main-menu';
+import { ProfileButton } from './profile-btn';
 
 import styles from './styles.module.scss';
 
 export const Header = () => (
-  <section className="container">
-    <div>
+  <header className={styles.header}>
+    <div className={clsx(styles.container, 'container')}>
       <Logo type="text-right" wrapperClassName={styles.logoWrapper} />
+      <Catalog />
+      <MainSearch />
+      <MainMenu />
+      <ProfileButton />
     </div>
-    <ProductCard />
-  </section>
+  </header>
 );

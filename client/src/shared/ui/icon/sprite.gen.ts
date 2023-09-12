@@ -5,7 +5,10 @@ export interface SpritesMap {
     | 'chevron'
     | 'heart'
     | 'message'
+    | 'package'
     | 'search'
+    | 'shopping-cart copy'
+    | 'shopping-cart'
     | 'star'
     | 'warning-alert';
 }
@@ -16,7 +19,10 @@ export const SPRITES_META = {
     'chevron',
     'heart',
     'message',
+    'package',
     'search',
+    'shopping-cart copy',
+    'shopping-cart',
     'star',
     'warning-alert',
   ],
@@ -27,7 +33,10 @@ export const SPRITES_META = {
     | 'chevron'
     | 'heart'
     | 'message'
+    | 'package'
     | 'search'
+    | 'shopping-cart copy'
+    | 'shopping-cart'
     | 'star'
     | 'warning-alert'
   >;

@@ -1,11 +1,19 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 
 import { CatalogMenu } from './menu';
 import { TriggerBtn } from './trigger-btn';
 
-export const Catalog = () => (
-  <>
-    <TriggerBtn />
-    <CatalogMenu />
-  </>
-);
+// TODO: fix isOpen logic
+
+export const Catalog = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <TriggerBtn setIsOpen={setIsOpen} isOpen={isOpen} />
+      <CatalogMenu setIsOpen={setIsOpen} isOpen={isOpen} />
+    </>
+  );
+};

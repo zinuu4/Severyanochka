@@ -4,7 +4,17 @@
   gap: 40px;
   padding: 40px 0;
   background: var(--surface);
-  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 15%);
+  box-shadow: var(--box-shadow-light-default);
+  position: absolute;
+  top: 72px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration);
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .row {
