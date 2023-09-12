@@ -4,6 +4,7 @@ import React from 'react';
 import { Logo } from '@/shared/ui';
 
 import { FooterMenu } from './menu';
+import { PhoneNumber } from './phone-number';
 import { SocialMedia } from './social-media';
 
 import styles from './styles.module.scss';
@@ -17,6 +18,7 @@ export const Footer = () => (
       </div>
       <div className={styles.row}>
         <SocialMedia />
+        <PhoneNumber />
       </div>
     </section>
   </footer>

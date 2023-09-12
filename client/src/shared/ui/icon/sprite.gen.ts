@@ -6,15 +6,16 @@ export interface SpritesMap {
     | 'heart'
     | 'message'
     | 'package'
+    | 'phone'
     | 'search'
     | 'shopping-cart copy'
     | 'shopping-cart'
     | 'star'
     | 'warning-alert'
-    | 'instagram'
-    | 'vkontakte'
     | 'facebook'
-    | 'odnoklassniki';
+    | 'instagram'
+    | 'odnoklassniki'
+    | 'vkontakte';
 }
 export const SPRITES_META = {
   sprite: [
@@ -24,15 +25,16 @@ export const SPRITES_META = {
     'heart',
     'message',
     'package',
+    'phone',
     'search',
     'shopping-cart copy',
     'shopping-cart',
     'star',
     'warning-alert',
-    'instagram',
-    'vkontakte',
     'facebook',
+    'instagram',
     'odnoklassniki',
+    'vkontakte',
   ],
 } satisfies {
   sprite: Array<
@@ -42,14 +44,15 @@ export const SPRITES_META = {
     | 'heart'
     | 'message'
     | 'package'
+    | 'phone'
     | 'search'
     | 'shopping-cart copy'
     | 'shopping-cart'
     | 'star'
     | 'warning-alert'
-    | 'instagram'
-    | 'vkontakte'
     | 'facebook'
+    | 'instagram'
     | 'odnoklassniki'
+    | 'vkontakte'
   >;
 };
