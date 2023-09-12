@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 import { bannerContent } from './config';
@@ -11,7 +12,10 @@ interface BannerProps {
 }
 
 export const Banner: React.FC<BannerProps> = ({ type }) => (
-  <div className={clsx(styles.banner, styles[type])}>
+  <Link
+    href={bannerContent[`${type}Link`]}
+    className={clsx(styles.banner, styles[type])}
+  >
     <div className={styles.content}>
       <h6 className={clsx('text-s-header', styles.title)}>
         {bannerContent[`${type}Title`]}
@@ -27,5 +31,5 @@ export const Banner: React.FC<BannerProps> = ({ type }) => (
         layout="fill"
       />
     </div>
-  </div>
+  </Link>
 );
