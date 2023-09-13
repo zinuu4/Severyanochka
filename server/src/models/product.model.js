@@ -121,6 +121,12 @@ const productSchema = mongoose.Schema(
       type: infoSchema,
       required: true,
     },
+    tags: [
+      {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'Tag',
+      },
+    ],
     reviews: {
       type: [reviewSchema],
       required: true,
@@ -132,6 +138,11 @@ const productSchema = mongoose.Schema(
   },
   { timestamps: true }
 );
+
+productSchema.pre('save', function(next) {
+  this.populate('tags', '-products');
+  next();
+})
 
 // add plugin that converts mongoose to json
 productSchema.plugin(toJSON);

@@ -9,18 +9,22 @@ const createProduct = async (productBody) => {
   }
   const updatedProductBody = { ...productBody };
   updatedProductBody.category = category._id;
-  return Product.create(updatedProductBody).then((product) => {
-    return Product.populate(product, { path: 'category' });
+  return await Product.create(updatedProductBody).then(async (product) => {
+    return await Product.populate(product, { path: 'category' });
   });
 };
 
 const getAllProducts = async () => {
-  return Product.find();
+  return await Product.find().lean();
 };
 
 const getProductByArticle = async (article) => {
-  return Product.findOne({ article });
+  return await Product.findOne({ article }).lean();
 };
+
+const queryProducts = async (filter, options) => {
+  return await Product.paginate(filter, options);
+}
 
 const updateProduct = async (article, updateBody) => {
   const product = await getProductByArticle(article);
@@ -44,6 +48,7 @@ const deleteProduct = async (article) => {
 module.exports = {
   createProduct,
   getAllProducts,
+  queryProducts,
   updateProduct,
   deleteProduct,
   getProductByArticle,

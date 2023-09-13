@@ -3,7 +3,7 @@ const { Category } = require('../models');
 const ApiError = require('../utils/ApiError');
 
 const getCategoryByName = async (name) => {
-  return Category.findOne({ name });
+  return await Category.findOne({ name });
 };
 
 const createCategory = async (categoryBody) => {

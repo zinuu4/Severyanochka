@@ -25,6 +25,11 @@ const createProduct = {
         weight: Joi.string().required(),
       })
       .required(),
+    tags: Joi.array().items(
+      Joi.object().keys({
+        name: Joi.string(),
+      })
+    ),
     reviews: Joi.array().items(
       Joi.object().keys({
         score: Joi.number().required(),
@@ -50,6 +55,11 @@ const getProducts = {
   query: Joi.object().keys({
     name: Joi.string(),
     category: Joi.string(),
+    tags: Joi.array().items(
+      Joi.object().keys({
+        id: Joi.string().custom(objectId),
+      })
+    ),
     sortBy: Joi.string(),
     limit: Joi.number().integer(),
     page: Joi.number().integer(),
@@ -87,6 +97,11 @@ const updateProduct = {
         manufacturerCountry: Joi.string(),
         weight: Joi.string(),
       }),
+      tags: Joi.array().items(
+        Joi.object().keys({
+          id: Joi.string().custom(objectId),
+        })
+      ),
       reviews: Joi.array().items(
         Joi.object().keys({
           score: Joi.number(),
