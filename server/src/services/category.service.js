@@ -14,6 +14,19 @@ const createCategory = async (categoryBody) => {
   return Category.create(categoryBody);
 };
 
+const addSubCategory = async (categoryName, subCategoryName) => {
+  const category = await getCategoryByName(categoryName);
+  if (!category) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Category not found');
+  }
+  if (category.subCategories.includes(subCategoryName)) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Subcategory already exists');
+  }
+  category.subCategories.push(subCategoryName);
+  await category.save();
+  return category;
+};
+
 const queryCategories = async (filter, options) => {
   const categories = await Category.paginate(filter, options);
   return categories;
@@ -40,6 +53,7 @@ const deleteCategory = async (name) => {
 
 module.exports = {
   createCategory,
+  addSubCategory,
   queryCategories,
   getCategoryByName,
   updateCategory,

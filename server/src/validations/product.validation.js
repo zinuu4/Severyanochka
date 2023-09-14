@@ -18,6 +18,7 @@ const createProduct = {
     discountedPrice: Joi.number(),
     bonusAmount: Joi.number(),
     category: Joi.string().required(),
+    subCategory: Joi.string(),
     info: Joi.object()
       .keys({
         brand: Joi.string().required(),
@@ -50,6 +51,7 @@ const getProducts = {
   query: Joi.object().keys({
     name: Joi.string(),
     category: Joi.string(),
+    subCategory: Joi.string(),
     sortBy: Joi.string(),
     limit: Joi.number().integer(),
     page: Joi.number().integer(),
@@ -64,7 +66,7 @@ const getProduct = {
 
 const updateProduct = {
   params: Joi.object().keys({
-    article: Joi.required().custom(objectId),
+    article: Joi.string().required(),
   }),
   body: Joi.object()
     .keys({
@@ -82,6 +84,7 @@ const updateProduct = {
       discountedPrice: Joi.number(),
       bonusAmount: Joi.number(),
       category: Joi.string(),
+      subCategory: Joi.string(),
       info: Joi.object().keys({
         brand: Joi.string(),
         manufacturerCountry: Joi.string(),
