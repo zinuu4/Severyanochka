@@ -9,7 +9,9 @@ const validate = (schema) => (req, res, next) => {
 
   if (Object.keys(req.query).length) {
     for (const [key, value] of Object.entries(object.query)) {
-      object.query[key] = value.split(',')
+      if (value.includes(',')) {
+        object.query[key] = value.split(',');
+      }
     }
   }
 

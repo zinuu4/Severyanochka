@@ -1,19 +1,13 @@
 const mongoose = require('mongoose');
 const { paginate, toJSON } = require('./plugins');
 
-const tagSchema = mongoose.Schema({
+const tagSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
     unique: true,
     index: true,
   },
-  products: [
-    {
-      type: mongoose.SchemaTypes.ObjectId,
-      ref: 'Product',
-    },
-  ]
 })
 
 // add plugin that converts mongoose to json

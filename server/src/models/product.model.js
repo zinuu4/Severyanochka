@@ -73,7 +73,7 @@ const infoSchema = mongoose.Schema({
   },
 });
 
-const productSchema = mongoose.Schema(
+const productSchema = new mongoose.Schema(
   {
     article: {
       type: Number,
@@ -123,7 +123,7 @@ const productSchema = mongoose.Schema(
     },
     tags: [
       {
-        type: mongoose.SchemaTypes.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Tag',
       },
     ],
@@ -150,15 +150,21 @@ productSchema.virtual('discountPrice').get(function() {
 })
 
 productSchema.pre('save', function(next) {
-  this.populate('tags', '-products').populate('category');
+  this.populate('tags').populate('category');
   next();
 })
 productSchema.pre('find', function(next) {
-  this.select('-category -subcategory -bonusAmount -info -reviews -reviewsSummary -tags');
+  this.
+    select('-bonusAmount -info -reviews -reviewsSummary -subCategory').
+    populate('category', '-subCategories').
+    populate('tags');
   next();
 })
 productSchema.pre('findOne', function(next) {
-  this.select('-category -subcategory -tags');
+  this.
+    select('-subCategory').
+    populate('category', '-subCategories').
+    populate('tags');
   next()
 })
 

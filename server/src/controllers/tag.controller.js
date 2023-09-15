@@ -1,12 +1,10 @@
 const httpStatus = require('http-status');
 const catchAsync = require('../utils/catchAsync');
 const { tagService } = require('../services');
-const pick = require('../utils/pick');
 
-const getTags = catchAsync(async (req, res) => {
-  const options = pick(req.query, ['sortBy', 'limit', 'page']);
-  const result = await tagService.queryTags(options);
-  res.status(httpStatus.FOUND).send(result);
+const getTagsByCategory = catchAsync(async (req, res) => {
+  const tags = await tagService.getTagsByCategory(req.query.category);
+  res.status(httpStatus.FOUND).send(tags);
 })
 
 const createTag = catchAsync(async (req, res) => {
@@ -25,9 +23,9 @@ const deleteTag = catchAsync(async (req, res) => {
 });
 
 module.exports = {
-  getTags,
+  // getTags,
+  getTagsByCategory,
   createTag,
   updateTag,
   deleteTag,
 };
-

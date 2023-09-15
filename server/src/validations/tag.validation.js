@@ -1,11 +1,9 @@
 const Joi = require('joi');
 const { objectId } = require('./custom.validation');
 
-const getTags = {
+const getTagsByCategory = {
   query: Joi.object().keys({
-    sortBy: Joi.string(),
-    limit: Joi.number().integer(),
-    page: Joi.number().integer(),
+    category: Joi.string().custom(objectId),
   }),
 };
 
@@ -31,7 +29,7 @@ const deleteTag = {
 };
 
 module.exports = {
-  getTags,
+  getTagsByCategory,
   createTag,
   updateTag,
   deleteTag,

@@ -10,7 +10,7 @@ const createProduct = async (productBody) => {
   if (category.subCategories.length > 0 && !category.subCategories.includes(productBody.subcategory)) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Subcategory not found');
   }
-  return Product.create(productBody);
+  return await Product.create(productBody);
 };
 
 const queryProducts = async (filter, options) => {

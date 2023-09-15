@@ -7,7 +7,7 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(validate(tagValidation.getTags), tagController.getTags)
+  .get(validate(tagValidation.getTagsByCategory), tagController.getTagsByCategory)
   .post(validate(tagValidation.createTag), tagController.createTag);
 
 router
