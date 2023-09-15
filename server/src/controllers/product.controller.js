@@ -10,11 +10,10 @@ const createProduct = catchAsync(async (req, res) => {
 });
 
 const getProducts = catchAsync(async (req, res) => {
-  const filter = pick(req.query, ['category', 'tags']);
-  console.log(filter);
+  const filter = pick(req.query, ['name', 'category', 'subCategory', 'tags']);
   const options = pick(req.query, ['sortBy', 'limit', 'page']);
-  const products = await productService.queryProducts({}, options)
-  res.status(httpStatus.OK).send(products);
+  const result = await productService.queryProducts(filter, options);
+  res.status(httpStatus.FOUND).send(result);
 });
 
 const getProduct = catchAsync(async (req, res) => {

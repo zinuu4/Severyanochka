@@ -13,11 +13,10 @@ const createProduct = {
       )
       .required(),
     price: Joi.number().required(),
-    discounted: Joi.boolean(),
     discountPercentage: Joi.number(),
-    discountedPrice: Joi.number(),
     bonusAmount: Joi.number(),
-    category: Joi.string().required(),
+    category: Joi.string().required().custom(objectId),
+    subCategory: Joi.string().custom(objectId),
     info: Joi.object()
       .keys({
         brand: Joi.string().required(),
@@ -26,9 +25,7 @@ const createProduct = {
       })
       .required(),
     tags: Joi.array().items(
-      Joi.object().keys({
-        name: Joi.string(),
-      })
+      Joi.string().custom(objectId),
     ),
     reviews: Joi.array().items(
       Joi.object().keys({
@@ -54,10 +51,11 @@ const createProduct = {
 const getProducts = {
   query: Joi.object().keys({
     name: Joi.string(),
-    category: Joi.string(),
+    category: Joi.string().custom(objectId),
     tags: Joi.array().items(
       Joi.string().custom(objectId),
     ),
+    subCategory: Joi.string().custom(objectId),
     sortBy: Joi.string(),
     limit: Joi.number().integer(),
     page: Joi.number().integer(),
@@ -66,13 +64,13 @@ const getProducts = {
 
 const getProduct = {
   params: Joi.object().keys({
-    article: Joi.string().custom(objectId),
+    article: Joi.number(),
   }),
 };
 
 const updateProduct = {
   params: Joi.object().keys({
-    article: Joi.required().custom(objectId),
+    article: Joi.string().required(),
   }),
   body: Joi.object()
     .keys({
@@ -85,11 +83,10 @@ const updateProduct = {
         })
       ),
       price: Joi.number(),
-      discounted: Joi.boolean(),
       discountPercentage: Joi.number(),
-      discountedPrice: Joi.number(),
       bonusAmount: Joi.number(),
       category: Joi.string(),
+      subCategory: Joi.string(),
       info: Joi.object().keys({
         brand: Joi.string(),
         manufacturerCountry: Joi.string(),
@@ -122,7 +119,7 @@ const updateProduct = {
 
 const deleteProduct = {
   params: Joi.object().keys({
-    article: Joi.string().custom(objectId),
+    article: Joi.number(),
   }),
 };
 

@@ -2,7 +2,6 @@ const httpStatus = require('http-status');
 const catchAsync = require('../utils/catchAsync');
 const { tagService } = require('../services');
 const pick = require('../utils/pick');
-const ApiError = require('../utils/ApiError');
 
 const getTags = catchAsync(async (req, res) => {
   const options = pick(req.query, ['sortBy', 'limit', 'page']);
