@@ -56,9 +56,7 @@ const getProducts = {
     name: Joi.string(),
     category: Joi.string(),
     tags: Joi.array().items(
-      Joi.object().keys({
-        id: Joi.string().custom(objectId),
-      })
+      Joi.string().custom(objectId),
     ),
     sortBy: Joi.string(),
     limit: Joi.number().integer(),
