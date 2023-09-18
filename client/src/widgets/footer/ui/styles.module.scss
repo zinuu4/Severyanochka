@@ -1,0 +1,24 @@
+.footer {
+  background-image: url('/footer-bg.png');
+  height: 126px;
+  background-color: var(--footer-background);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoWrapper {
+  width: 64px;
+  height: 44px;
+  margin-right: 40px;
+}

@@ -2,11 +2,11 @@ import { IconName } from '@/shared/ui';
 
 export interface MenuItem {
   icon: IconName;
-  text: string;
+  label: string;
 }
 
 export const menuItems: MenuItem[] = [
-  { icon: 'heart', text: 'Избранное' },
-  { icon: 'package', text: 'Заказы' },
-  { icon: 'shopping-cart', text: 'Корзина' },
+  { icon: 'heart', label: 'Избранное' },
+  { icon: 'package', label: 'Заказы' },
+  { icon: 'shopping-cart', label: 'Корзина' },
 ];
