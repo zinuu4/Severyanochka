@@ -14,7 +14,7 @@ interface PromotionCardProps {
 export const PromotionCard: React.FC<PromotionCardProps> = ({ type }) => (
   <Link
     href={promotionCardContent[`${type}Link`]}
-    className={clsx(styles.banner, styles[type])}
+    className={clsx(styles.promotionCard, styles[type])}
   >
     <div className={styles.content}>
       <h6 className={clsx('text-s-header', styles.title)}>
