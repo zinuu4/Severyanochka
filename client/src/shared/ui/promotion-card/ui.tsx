@@ -1,30 +1,30 @@
-import clsx from 'clsx';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import clsx from 'clsx';
 
-import { bannerContent } from './config';
+import { promotionCardContent } from './config';
 
 import styles from './styles.module.scss';
 
-interface BannerProps {
+interface PromotionCardProps {
   type: 'loyaltyCard' | 'promotion';
 }
 
-export const Banner: React.FC<BannerProps> = ({ type }) => (
+export const PromotionCard: React.FC<PromotionCardProps> = ({ type }) => (
   <Link
-    href={bannerContent[`${type}Link`]}
+    href={promotionCardContent[`${type}Link`]}
     className={clsx(styles.banner, styles[type])}
   >
     <div className={styles.content}>
       <h6 className={clsx('text-s-header', styles.title)}>
-        {bannerContent[`${type}Title`]}
+        {promotionCardContent[`${type}Title`]}
       </h6>
-      <p>{bannerContent[`${type}Text`]}</p>
+      <p>{promotionCardContent[`${type}Text`]}</p>
     </div>
     <div className={styles.imageWrapper}>
       <Image
-        src={bannerContent[`${type}Image`]}
+        src={promotionCardContent[`${type}Image`]}
         alt="loyalty-card"
         className={styles.image}
         objectFit="contain"
