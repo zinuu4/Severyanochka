@@ -1,5 +1,5 @@
 .banner {
-  background-image: url('/fruit-colored-pattern.png');
+  background-image: var(--pattern-colored);
   background-color: var(--on-primary);
   height: 200px;
   display: flex;

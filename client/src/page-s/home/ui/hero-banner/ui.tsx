@@ -2,12 +2,13 @@ import Image from 'next/image';
 import clsx from 'clsx';
 
 import styles from './styles.module.scss';
+import { heroBannerContent } from './config';
 
 export const HeroBanner = () => (
   <section className={styles.banner}>
     <div className={styles.imageWrapper}>
       <Image 
-        src="/vegetables-card-banner.png"
+        src={heroBannerContent.heroBannerImage}
         alt="vegetables card"
         sizes="100%"
         fill
@@ -16,7 +17,7 @@ export const HeroBanner = () => (
     </div>
     <div className={styles.content}>
       <h1 className={clsx('text-s-header', styles.title)}>
-        Доставка бесплатно от 1000 ₽
+        {heroBannerContent.heroBannerTitle}
       </h1>
     </div>
   </section>
