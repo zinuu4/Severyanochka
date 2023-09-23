@@ -1,0 +1,23 @@
+.banner {
+  background-image: var(--main-bg-src);
+  background-color: var(--on-primary);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 48px;
+  line-height: 150%;
+}
+
+.imageWrapper {
+  position: relative;
+  object-fit: cover;
+  width: 300px;
+}
