@@ -1,0 +1,37 @@
+.banner {
+  background: url('/background-our-company.png') no-repeat;
+  background-size: contain;
+  min-height: 400px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 30px;
+  &Content {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    min-width: 1200px;
+  }
+  &Text {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    flex-grow: 1;
+    margin-top: 50px;
+  }
+  &Title {
+    padding: 16px;
+  }
+  &Description {
+    color: var(--primary);
+    padding: 16px;
+    margin-top: 16px;
+  }
+  &WrapperImage {
+    position: relative;
+    object-fit: cover;
+    height: 374px;
+    width: 670px;
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,18 @@
+.aboutCompany {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+.achievements {
+  display: flex;
+  justify-content: center;
+  &List {
+    display: flex;
+    gap: 120px;
+    max-width: 1312px;
+  }
+}
+.gratitudeMessage {
+  display: flex;
+  justify-content: center;
+}
