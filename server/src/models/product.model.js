@@ -73,7 +73,7 @@ const infoSchema = mongoose.Schema({
   },
 });
 
-const productSchema = new mongoose.Schema(
+const productSchema = mongoose.Schema(
   {
     article: {
       type: Number,
@@ -155,14 +155,13 @@ productSchema.pre('save', function(next) {
 })
 productSchema.pre('find', function(next) {
   this.
-    select('-bonusAmount -info -reviews -reviewsSummary -subCategory').
+    select('-bonusAmount -info -reviews -reviewsSummary').
     populate('category', '-subCategories').
     populate('tags');
   next();
 })
 productSchema.pre('findOne', function(next) {
   this.
-    select('-subCategory').
     populate('category', '-subCategories').
     populate('tags');
   next()
