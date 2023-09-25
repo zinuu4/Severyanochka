@@ -1,4 +1,4 @@
-export const bannerContent = {
+export const promotionCardContent = {
   loyaltyCardTitle: 'Оформите карту «Северяночка»',
   loyaltyCardText: 'И получайте бонусы при покупке в магазинах и на сайте',
   loyaltyCardImage: '/loyalty-card.png',
