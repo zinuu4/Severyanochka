@@ -99,18 +99,13 @@ const productSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    discounted: {
-      type: Boolean,
-    },
     discountPercentage: {
       type: Number,
-    },
-    discountedPrice: {
-      type: Number,
+      default: 0,
     },
     bonusAmount: {
       type: Number,
-      required: true,
+      default: 0,
     },
     category: {
       type: mongoose.SchemaTypes.ObjectId,
@@ -126,6 +121,12 @@ const productSchema = mongoose.Schema(
       type: infoSchema,
       required: true,
     },
+    tags: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Tag',
+      },
+    ],
     reviews: {
       type: [reviewSchema],
       required: true,
@@ -135,8 +136,36 @@ const productSchema = mongoose.Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true }
+  }
 );
+
+productSchema.virtual('discounted').get(function() {
+  return !!this.discountPercentage;
+})
+productSchema.virtual('discountPrice').get(function() {
+  return this.discountPercentage ? this.price * (1 - this.discountPercentage) : this.price;
+})
+
+productSchema.pre('save', function(next) {
+  this.populate('tags').populate('category');
+  next();
+})
+productSchema.pre('find', function(next) {
+  this.
+    select('-bonusAmount -info -reviews -reviewsSummary').
+    populate('category', '-subCategories').
+    populate('tags');
+  next();
+})
+productSchema.pre('findOne', function(next) {
+  this.
+    populate('category', '-subCategories').
+    populate('tags');
+  next()
+})
 
 // add plugin that converts mongoose to json
 productSchema.plugin(toJSON);
