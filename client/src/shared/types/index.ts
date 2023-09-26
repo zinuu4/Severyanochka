@@ -6,3 +6,5 @@ export type ReactTagProps<
     | keyof React.JSX.IntrinsicElements
     | React.JSXElementConstructor<any>,
 > = React.ComponentProps<T>;
+
+export * from './api';
