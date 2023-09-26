@@ -1,0 +1,21 @@
+.card {
+  display: block;
+  width: 226px;
+  height: max-content;
+
+  &:hover .cartContainer button {
+    background: var(--primary);
+    color: var(--on-primary);
+    border: none;
+
+    &.disabled {
+      background: var(--primary-muted);
+      color: var(--primary);
+    }
+  }
+}
+
+.content {
+  background: var(--surface);
+  padding: 8px;
+}

@@ -1,0 +1,25 @@
+.container {
+  max-width: var(--content-width);
+  margin: 70px auto;
+}
+
+.chevron {
+  height: 24px;
+  width: 24px;
+  transform: rotate(180deg);
+}
+
+.title {
+  font-size: var(--font-xl-laptop);
+}
+
+.categoryTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtitleChevron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

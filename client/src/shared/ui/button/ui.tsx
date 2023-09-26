@@ -12,6 +12,7 @@ interface ButtonProps extends ReactTagProps<'button'> {
   onlyIcon?: IconName;
   size?: 'large' | 'medium' | 'small';
   accent?: 'primary' | 'secondary' | 'grayscale' | 'error';
+  outlined?: boolean;
   leftIcon?: IconName;
   rightIcon?: IconName;
   className?: string;
@@ -26,6 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
   onlyIcon,
   size = 'medium',
   accent = 'primary',
+  outlined,
   leftIcon,
   rightIcon,
   className,
@@ -42,6 +44,7 @@ export const Button: React.FC<ButtonProps> = ({
         'btn-reset',
         styles[size],
         styles[accent],
+        outlined && styles.outline,
       )}
       href={href}
       {...props}
