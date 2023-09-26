@@ -1,1 +1,1 @@
-export { Banner } from './ui';
+export { PromotionCard } from './ui';
