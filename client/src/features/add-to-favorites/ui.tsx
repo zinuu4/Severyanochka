@@ -1,5 +1,7 @@
-import clsx from 'clsx';
+'use client';
+
 import React, { useState } from 'react';
+import clsx from 'clsx';
 
 import { ReactTagProps } from '@/shared/types';
 import { Icon } from '@/shared/ui';
