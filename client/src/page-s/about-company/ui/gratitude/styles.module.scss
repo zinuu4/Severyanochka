@@ -1,0 +1,12 @@
+.gratitude {
+  display: flex;
+  align-items: center;
+}
+.wrapperContent {
+  background: url('/gratitude-message.png') no-repeat;
+  background-size: cover;
+}
+.content {
+  padding: 30px 40px 30px 80px;
+  color: var(--secondary);
+}

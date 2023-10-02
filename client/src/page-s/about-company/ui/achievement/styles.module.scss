@@ -1,0 +1,17 @@
+.achievement {
+  display: flex;
+  min-width: 262px;
+  &Text {
+    display: flex;
+    gap: 16px;
+    margin-right: 10px;
+    flex-direction: column;
+  }
+  &Title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  &Description {
+    line-height: 36px;
+  }
+}
