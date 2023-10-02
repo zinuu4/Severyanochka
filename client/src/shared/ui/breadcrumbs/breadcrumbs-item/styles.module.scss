@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.title {
+  margin-right: 16px;
+
+  &.active {
+    color: var(--grayscale-hard);
+    margin-right: 0;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transform: rotate(180deg);
+}
