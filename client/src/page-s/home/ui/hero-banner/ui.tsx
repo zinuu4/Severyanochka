@@ -1,13 +1,13 @@
-import Image from 'next/image';
 import clsx from 'clsx';
+import Image from 'next/image';
 
-import styles from './styles.module.scss';
 import { heroBannerContent } from './config';
+import styles from './styles.module.scss';
 
 export const HeroBanner = () => (
   <section className={styles.banner}>
     <div className={styles.imageWrapper}>
-      <Image 
+      <Image
         src={heroBannerContent.heroBannerImage}
         alt="vegetables card"
         sizes="100%"

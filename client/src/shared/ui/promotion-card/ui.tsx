@@ -1,7 +1,7 @@
-import React from 'react';
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import clsx from 'clsx';
+import React from 'react';
 
 import { promotionCardContent } from './config';
 
