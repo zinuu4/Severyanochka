@@ -15,7 +15,15 @@ const password = (value, helpers) => {
   return value;
 };
 
+const phoneNumber = (value, helpers) => {
+  if (!value.match(/^[\+]?[0-9]{1,3}[-\s\.]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{4,7}$/)) {
+    return helpers.message('invalid phone number');
+  }
+  return value
+}
+
 module.exports = {
   objectId,
   password,
+  phoneNumber,
 };

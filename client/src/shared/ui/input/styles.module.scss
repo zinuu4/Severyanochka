@@ -1,0 +1,32 @@
+.label {
+  color: var(--grayscale-hard);
+  display: block;
+}
+
+.field {
+  position: relative;
+  display: inline-flex;
+}
+
+.input {
+  padding: 8px 16px;
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--grayscale-light);
+  background: var(--surface);
+  line-height: var(--line-height);
+  color: var(--on-surface);
+  transition:
+    border var(--duration),
+    box-shadow var(--duration);
+  outline: none;
+
+  &.isFocus {
+    border: 1px solid var(--secondary);
+    box-shadow: 4px 8px 16px 0 rgba(112 192 91 / 20%);
+  }
+
+  &.disabled {
+    border: 1px solid var(--grayscale-light, #bfbfbf);
+    background: var(--grayscale-lightest, #f3f2f1);
+  }
+}

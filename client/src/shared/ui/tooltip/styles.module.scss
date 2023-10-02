@@ -1,0 +1,87 @@
+.label {
+  position: relative;
+  display: inline-flex;
+  padding: 8px 16px;
+  border-radius: var(--rounded-md);
+
+  &.dark {
+    background: var(--pallete-error);
+  }
+
+  &.light {
+    box-shadow: var(--box-shadow-light-default);
+    background: var(--background-blue-light-100);
+  }
+}
+
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 4px solid var(--pallete-error);
+
+  &.dark {
+    border-bottom: 4.5px solid var(--pallete-error);
+  }
+
+  &.light {
+    border-bottom: 4.5px solid var(--background-blue-light-100);
+  }
+
+  &.top {
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.right {
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(90deg);
+  }
+
+  &.bottom {
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    transform: rotate(180deg);
+  }
+
+  &.left {
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(270deg);
+  }
+}
+
+.text {
+  font-size: 14px;
+  line-height: 24px;
+
+  &.dark {
+    color: var(--pallete-on-error);
+  }
+
+  &.light {
+    color: var(--text-dark);
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+
+  &.dark {
+    fill: var(--pallete-on-error);
+  }
+
+  // TODO: define is this color uses somewhere else
+  &.light {
+    color: #414141;
+  }
+}

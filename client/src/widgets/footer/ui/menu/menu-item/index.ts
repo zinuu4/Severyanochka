@@ -1,0 +1,1 @@
+export { FooterMenuItem } from './ui';

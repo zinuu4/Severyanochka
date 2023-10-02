@@ -1,0 +1,31 @@
+.promotionCard {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-sm);
+  width: 584px;
+  height: 200px;
+}
+
+.loyaltyCard {
+  background: var(--primary-muted);
+}
+
+.promotion {
+  background: var(--secondary-muted);
+}
+
+.content {
+  margin: 30px 0 44px 40px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  margin-bottom: 6px;
+  line-height: 150%;
+}

@@ -1,0 +1,1 @@
+export { ProductCardHeader } from './ui';

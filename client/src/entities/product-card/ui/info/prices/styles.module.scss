@@ -1,0 +1,14 @@
+.field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priceCommon {
+  color: var(--grayscale-hardest);
+}
+
+.descr {
+  color: var(--grayscale-light);
+}

@@ -1,26 +1,96 @@
+/* stylelint-disable custom-property-empty-line-before */
 :root {
   // base
   --content-width: 1230px;
   --container-offset: 15px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-  --font-family: 'Rubik', sans-serif;
+  --font-family: "Rubik", sans-serif;
 
   // animations
   --duration: 0.3s;
 
-  // colors
-  --main-bg-page: #FBF8EC;
-  --main-secondary: #70C05B;
-  --main-primary: #F63;
-  --main-surface: #FFF;
-  --main-on-surface: #414141;
-  --main-on-secondary: #FFF;
-  --grayscale-hardest: #606060;
-  --grayscale-lightest: #F3F2F1;
+  // main colors
+  --background: #f4f4f2;
+  --surface: #fff;
+  --primary: #f63;
+  --secondary: #70c05b;
+  --on-background: #291e0f;
+  --on-surface: #414141;
+  --on-primary: #fff;
+  --on-secondary: #fff;
 
-  // font-size
-  --font-size: 16px;
+  // minor colors
+  // TODO: after end of developing check if this var using in several places and if not rename it
+  --background-blue-light-100: #f4f6fb;
+  --footer-background: #F9F4E2;
+
+  // grayscale
+  --grayscale-lightest: #f3f2f1;
+  --grayscale-light: #bfbfbf;
+  --grayscale-hard: #8f8f8f;
+  --grayscale-hardest: #606060;
+
+  // pallete
+  --pallete-success: #008c49;
+  --pallete-info: #1cb9fc;
+  --pallete-warning: #fca21c;
+  --pallete-error: #d80000;
+  --pallete-on-error: #f2f2f2;
+
+  // muted
+  --primary-muted: #fcd5ba;
+  --secondary-muted: #e5ffde;
+  --pallete-error-muted: #ffc7c7;
+
+  // images
+  --main-bg-src: url('/banners/fruit-colored-pattern.png');
+
+  // font
+  --font-xs-laptop: 12px;
+  --font-xs-header-laptop: 18px;
+
+  --font-s-laptop: 16px;
+  --font-s-header-laptop: 24px;
+
+  --font-m-laptop: 18px;
+  --font-m-header-laptop: 36px;
+
+  --font-l-laptop: 24px;
+  --font-l-header-laptop: 48px;
+
+  --font-xl-laptop: 36px;
+  --font-xl-header-laptop: 64px;
+
+  --font-weight: 400;
+  --line-height: 150%;
+  --text-dark: #151515;
 
   // borders
   --rounded-sm: 4px;
+  --rounded-md: 5px;
+
+  // box-shadows
+  --default-color: rgb(0 0 0 / 10%);
+  --primary-color: rgb(255 102 51 / 20%);
+  --secondary-color: rgb(112 192 91 / 20%);
+
+  --box-shadow-default-xs: 1px 2px 4px 0px var(--default-color);
+  --box-shadow-default-s: 2px 4px 8px 0px var(--default-color);
+  --box-shadow-default-m: 4px 8px 16px 0px var(--default-color);
+  --box-shadow-default-l: 8px 16px 32px 0px var(--default-color);
+  --box-shadow-default-xl: 16px 32px 64px 0px var(--default-color);
+
+  --box-shadow-primary-xs: 1px 2px 4px 0px var(--primary-color);
+  --box-shadow-primary-s: 2px 4px 8px 0px var(--primary-color);
+  --box-shadow-primary-m: 4px 8px 16px 0px var(--primary-color);
+  --box-shadow-primary-l: 8px 16px 32px 0px var(--primary-color);
+  --box-shadow-primary-xl: 16px 32px 64px 0px var(--primary-color);
+
+  --box-shadow-secondary-xs: 1px 2px 4px 0px var(--secondary-color);
+  --box-shadow-secondary-s: 2px 4px 8px 0px var(--secondary-color);
+  --box-shadow-secondary-m: 4px 8px 16px 0px var(--secondary-color);
+  --box-shadow-secondary-l: 8px 16px 32px 0px var(--secondary-color);
+  --box-shadow-secondary-xl: 16px 32px 64px 0px var(--secondary-color);
+
+  --box-shadow-light-default: 0 8px 16px 0 rgba(0 0 0 / 15%);
 }

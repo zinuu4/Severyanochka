@@ -1,10 +1,58 @@
 export interface SpritesMap {
-  sprite: 'burger' | 'logo-no-text' | 'logo-text-down' | 'logo-text-right';
+  sprite:
+    | 'alert-circle'
+    | 'burger'
+    | 'chevron'
+    | 'heart'
+    | 'message'
+    | 'package'
+    | 'phone'
+    | 'search'
+    | 'shopping-cart copy'
+    | 'shopping-cart'
+    | 'star'
+    | 'warning-alert'
+    | 'facebook'
+    | 'instagram'
+    | 'odnoklassniki'
+    | 'vkontakte';
 }
 export const SPRITES_META = {
-  sprite: ['burger', 'logo-no-text', 'logo-text-down', 'logo-text-right'],
+  sprite: [
+    'alert-circle',
+    'burger',
+    'chevron',
+    'heart',
+    'message',
+    'package',
+    'phone',
+    'search',
+    'shopping-cart copy',
+    'shopping-cart',
+    'star',
+    'warning-alert',
+    'facebook',
+    'instagram',
+    'odnoklassniki',
+    'vkontakte',
+  ],
 } satisfies {
   sprite: Array<
-    'burger' | 'logo-no-text' | 'logo-text-down' | 'logo-text-right'
+    | 'alert-circle'
+    | 'burger'
+    | 'chevron'
+    | 'heart'
+    | 'message'
+    | 'package'
+    | 'phone'
+    | 'search'
+    | 'shopping-cart copy'
+    | 'shopping-cart'
+    | 'star'
+    | 'warning-alert'
+    | 'facebook'
+    | 'instagram'
+    | 'odnoklassniki'
+    | 'vkontakte'
   >;
 };
