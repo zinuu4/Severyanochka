@@ -3,13 +3,13 @@ export interface BreadcrumbsItem {
   title: string;
 }
 
-interface UseGenerateBreadcrumbsProps {
+interface GenerateBreadcrumbsProps {
   setBreadcrumbs: (breadcrumbs: BreadcrumbsItem[]) => void;
 }
 
-export const GenerateBreadcrumbs = ({
+export const generateBreadcrumbs = ({
   setBreadcrumbs,
-}: UseGenerateBreadcrumbsProps) => {
+}: GenerateBreadcrumbsProps) => {
   const urlSegments = window.location.pathname
     .split('/')
     .filter((segment) => segment !== '');

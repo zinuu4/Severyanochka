@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 
 import { Crumb } from './crumb';
-import { BreadcrumbsItem, GenerateBreadcrumbs } from './lib';
+import { BreadcrumbsItem, generateBreadcrumbs } from './lib';
 
 import styles from './styles.module.scss';
 
@@ -14,7 +14,7 @@ export const Breadcrumbs = () => {
   const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbsItem[]>([]);
 
   useEffect(() => {
-    GenerateBreadcrumbs({ setBreadcrumbs });
+    generateBreadcrumbs({ setBreadcrumbs });
   }, []);
 
   return (
