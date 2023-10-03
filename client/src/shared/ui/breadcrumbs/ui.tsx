@@ -1,7 +1,36 @@
-import React from 'react';
+'use client';
 
-import { BreadcrumbsItem } from './breadcrumbs-item';
+import clsx from 'clsx';
+import React, { useEffect, useState } from 'react';
+
+import { Crumb } from './crumb';
+import { BreadcrumbsItem, GenerateBreadcrumbs } from './lib';
+
+import styles from './styles.module.scss';
+
+// TODO: add translations
 
 export const Breadcrumbs = () => {
-  return <BreadcrumbsItem title="main" />;
+  const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbsItem[]>([]);
+
+  useEffect(() => {
+    GenerateBreadcrumbs({ setBreadcrumbs });
+  }, []);
+
+  return (
+    <div className={clsx(styles.container, 'container')}>
+      {breadcrumbs.map(({ path, title }, index) => {
+        const isLastCrumb = breadcrumbs.length === index + 1;
+
+        return (
+          <Crumb
+            key={path}
+            path={path}
+            title={title}
+            isLastCrumb={isLastCrumb}
+          />
+        );
+      })}
+    </div>
+  );
 };

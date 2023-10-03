@@ -1,1 +1,0 @@
-export { BreadcrumbsItem } from './ui';

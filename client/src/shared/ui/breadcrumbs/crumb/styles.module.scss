@@ -1,14 +1,13 @@
 .wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-right: 16px;
 }
 
 .title {
   margin-right: 16px;
 
-  &.active {
+  &.last {
     color: var(--grayscale-hard);
     margin-right: 0;
   }
