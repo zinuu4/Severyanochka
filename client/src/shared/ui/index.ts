@@ -8,3 +8,4 @@ export * from './input';
 export * from './notice';
 export * from './rating';
 export * from './promotion-card';
+export * from './breadcrumbs';
